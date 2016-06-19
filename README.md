@@ -43,8 +43,7 @@ If you install this plugin manually, make sure it is installed in `lib/plugins/s
 
 ### Brush
 
-The brush (language) that SyntaxHighlighter should use.<br />
-Defaults to "text" if none is provided.<br />
+The brush (language) that SyntaxHighlighter should use. Defaults to "text" if none is provided.<br />
 See [SyntaxHighlighter Brushes page](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes) for a complete list of available brushes.
 
 ### Options
