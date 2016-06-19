@@ -1,0 +1,7 @@
+base   @RELEASE_BASE@
+author @RELEASE_AUTHOR@
+email  @RELEASE_EMAIL@
+date   @RELEASE_DATE@
+name   @RELEASE_NAME@
+desc   @RELEASE_DESC@
+url    @RELEASE_URL@

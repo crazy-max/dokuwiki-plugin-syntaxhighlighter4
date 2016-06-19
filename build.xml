@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="syntaxhighlighter4" default="release" basedir=".">
+
+    <dirname property="project.basedir" file="${ant.file.syntaxhighlighter4}" />
+    <property name="build.properties" value="${project.basedir}/build.properties" />
+    <property name="bin.path" value="${project.basedir}/bin" />
+    <property name="lib.path" value="${bin.path}/lib" />
+    <property name="dist.path" value="${project.basedir}/dist" />
+    <property file="${build.properties}" />
+
+    <target name="init" unless="is.lib.loaded" description="Init">
+        <mkdir dir="${bin.path}" />
+        <mkdir dir="${dist.path}" />
+    </target>
+
+    <target name="load.lib" unless="is.lib.loaded" depends="init, load.lib.antcontrib" description="Load libraries">
+        <var name="is.lib.loaded" value="true" />
+    </target>
+
+    <target name="load.lib.antcontrib" unless="is.lib.loaded">
+        <echo message="Load ANT Contrib" />
+        <mkdir dir="${lib.path}/ant-contrib" />
+        <get dest="${lib.path}/ant-contrib/ant-contrib-1.0b3.jar"
+             src="http://search.maven.org/remotecontent?filepath=ant-contrib/ant-contrib/1.0b3/ant-contrib-1.0b3.jar"
+             skipexisting="true" />
+        <taskdef resource="net/sf/antcontrib/antlib.xml">
+            <classpath>
+                <fileset dir="${lib.path}/ant-contrib">
+                    <include name="**/*.jar" />
+                </fileset>
+            </classpath>
+        </taskdef>
+    </target>
+
+    <target name="release" depends="load.lib">
+        <echo message="Clean release folder..." />
+        <delete dir="${bin.path}/${release.base}" />
+
+        <echo message="Copy ${release.base} folder..." />
+        <copy todir="${bin.path}/${release.base}">
+            <fileset dir="${project.basedir}/${release.base}" />
+        </copy>
+
+        <echo message="Copy others files..." />
+        <copy todir="${bin.path}/${release.base}" overwrite="true">
+            <fileset file="${project.basedir}/CHANGELOG.md" />
+            <fileset file="${project.basedir}/LICENSE" />
+            <fileset file="${project.basedir}/README.md" />
+        </copy>
+
+        <echo message="Insert plugins info in ${bin.path}/${release.base}/plugin.info.txt..." />
+        <copy file="${project.basedir}/${release.base}/plugin.info.txt" tofile="${bin.path}/${release.base}/plugin.info.txt" overwrite="true">
+            <filterset>
+                <filter token="RELEASE_BASE" value="${release.base}" />
+                <filter token="RELEASE_AUTHOR" value="${release.author}" />
+                <filter token="RELEASE_EMAIL" value="${release.email}" />
+                <filter token="RELEASE_DATE" value="${release.date}" />
+                <filter token="RELEASE_NAME" value="${release.name}" />
+                <filter token="RELEASE_DESC" value="${release.desc}" />
+                <filter token="RELEASE_URL" value="${release.url}" />
+            </filterset>
+        </copy>
+
+        <echo message="Create release in ${dist.path}/${release.base}.zip" />
+        <zip destfile="${dist.path}/${release.base}.zip" update="false">
+            <zipfileset dir="${bin.path}/${release.base}" prefix="${release.base}" />
+        </zip>
+    </target>
+
+</project>
