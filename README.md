@@ -1,4 +1,9 @@
-# SyntaxHighlighter4 DokuWiki Plugin [![Download](https://img.shields.io/badge/download-20160619-brightgreen.svg)](https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/releases/download/20160619/syntaxhighlighter4.zip) [![Donate Paypal](https://img.shields.io/badge/donate-paypal-blue.svg)](https://www.paypal.me/crazyws)
+[![GitHub release](https://img.shields.io/github/release/crazy-max/dokuwiki-plugin-syntaxhighlighter4.svg?style=flat-square)](https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/releases)
+[![Code Quality](https://img.shields.io/codacy/grade/440e4b5de2ee4d37978a8e9e19f4b76f.svg?style=flat-square)](https://www.codacy.com/app/crazy-max/dokuwiki-plugin-syntaxhighlighter4)
+[![StyleCI](https://styleci.io/repos/61027126/shield?style=flat-square)](https://styleci.io/repos/61027126)
+[![Donate Paypal](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://www.paypal.me/crazyws)
+
+# SyntaxHighlighter4 DokuWiki Plugin
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -54,11 +59,11 @@ The plugin handles the [Block Title from SyntaxHighlighter 3](http://alexgorbatc
 ### Defaults
 
 [Syntaxhighlighter default options](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Configuration#options) can be overrided via the [Config Manager](https://www.dokuwiki.org/plugin:config) :
-* **autoLinks**: Allows you to turn detection of links in the highlighted element on and off. If the option is turned off, URLs won’t be clickable `(default on)`
+* **autoLinks**: Allows you to turn detection of links in the highlighted element on and off. If the option is turned off, URLs won’t be clickable `(default true)`
 * **firstLine**: Allows you to change the first (starting) line number `(default 1)`
-* **gutter**: Allows you to turn gutter with line numbers on and off `(default on)`
-* **htmlScript**: Allows you to highlight a mixture of HTML/XML code and a script which is very common in web development. Setting this value to true requires that you have shBrushXml.js loaded and that the brush you are using supports this feature `(default off)`
-* **smartTabs**: Allows you to turn smart tabs feature on and off `(default on)`
+* **gutter**: Allows you to turn gutter with line numbers `(default true)`
+* **htmlScript**: Allows you to highlight a mixture of HTML/XML code and a script which is very common in web development. Setting this value to true requires that you have shBrushXml.js loaded and that the brush you are using supports this feature `(default false)`
+* **smartTabs**: Allows you to turn smart tabs feature on and off `(default true)`
 * **tabSize**: Allows you to adjust tab size `(default 4)`
 
 ## Example
