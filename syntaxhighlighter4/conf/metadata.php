@@ -1,11 +1,10 @@
 <?php
 /**
- * Options for the syntaxhighlighter4 plugin
+ * Options for the syntaxhighlighter4 plugin.
  *
  * @author Cr@zy <webmaster@crazyws.fr>
  */
-
-$meta['theme'] = array('multichoice','_choices' => array(
+$meta['theme'] = ['multichoice', '_choices' => [
     'theme-default.css',
     'theme-django.css',
     'theme-eclipse.css',
@@ -14,13 +13,13 @@ $meta['theme'] = array('multichoice','_choices' => array(
     'theme-mdultra.css',
     'theme-midnight.css',
     'theme-rdark.css',
-    'theme-swift.css'
-));
+    'theme-swift.css',
+]];
 
 // defaults
-$meta['autoLinks'] = array('onoff');
-$meta['firstLine'] = array('numeric');
-$meta['gutter'] = array('onoff');
-$meta['htmlScript'] = array('onoff');
-$meta['smartTabs'] = array('onoff');
-$meta['tabSize'] = array('numeric');
+$meta['autoLinks'] = ['onoff'];
+$meta['firstLine'] = ['numeric'];
+$meta['gutter'] = ['onoff'];
+$meta['htmlScript'] = ['onoff'];
+$meta['smartTabs'] = ['onoff'];
+$meta['tabSize'] = ['numeric'];
