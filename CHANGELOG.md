@@ -4,7 +4,7 @@
 
 * Required DokuWiki >= Elenor of Tsort ([dokuwiki issue](https://github.com/splitbrain/dokuwiki/pull/1549))
 * onoff values are `true` or `false` (Issue #3)
-* Apply StyleCI 
+* Apply StyleCI
 
 ## 2016/06/19
 
