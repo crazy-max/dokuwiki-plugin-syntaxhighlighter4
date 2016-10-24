@@ -1,4 +1,5 @@
 [![GitHub release](https://img.shields.io/github/release/crazy-max/dokuwiki-plugin-syntaxhighlighter4.svg?style=flat-square)](https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/releases)
+[![Minimum DokuWiki Version](https://img.shields.io/badge/dokuwiki-%3E%3D%202016--06--26-yellow.svg?style=flat-square)](https://php.net/)
 [![Code Quality](https://img.shields.io/codacy/grade/440e4b5de2ee4d37978a8e9e19f4b76f.svg?style=flat-square)](https://www.codacy.com/app/crazy-max/dokuwiki-plugin-syntaxhighlighter4)
 [![StyleCI](https://styleci.io/repos/61027126/shield?style=flat-square)](https://styleci.io/repos/61027126)
 [![Donate Paypal](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://www.paypal.me/crazyws)
