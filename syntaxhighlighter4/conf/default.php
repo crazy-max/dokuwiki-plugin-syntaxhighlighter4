@@ -1,10 +1,9 @@
 <?php
 /**
- * Default settings for the syntaxhighlighter4 plugin
+ * Default settings for the syntaxhighlighter4 plugin.
  *
  * @author Cr@zy <webmaster@crazyws.fr>
  */
-
 $conf['theme'] = 'theme-default.css';
 
 // defaults
