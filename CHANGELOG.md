@@ -2,6 +2,7 @@
 
 ## 2016/10/24
 
+* Required DokuWiki >= Elenor of Tsort
 * onoff values are `true` or `false` (Issue #3)
 * Apply StyleCI
 
