@@ -38,16 +38,18 @@ class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
     public function handle_metaheader(Doku_Event &$event, $param)
     {
         // Add SyntaxHighlighter theme.
-        $event->data['link'][] = ['rel' => 'stylesheet',
-            'type'                      => 'text/css',
-            'href'                      => DOKU_BASE.'lib/plugins/syntaxhighlighter4/dist/'.$this->getConf('theme'),
-        ];
+        $event->data['link'][] = array(
+            'rel' => 'stylesheet',
+            'type' => 'text/css',
+            'href' => DOKU_BASE.'lib/plugins/syntaxhighlighter4/dist/'.$this->getConf('theme'),
+        );
 
         // Register SyntaxHighlighter javascript.
-        $event->data['script'][] = ['type' => 'text/javascript',
-            'src'                          => DOKU_BASE.'lib/plugins/syntaxhighlighter4/dist/syntaxhighlighter.js',
-            '_data'                        => '',
-        ];
+        $event->data['script'][] = array(
+            'type' => 'text/javascript',
+            'src' => DOKU_BASE.'lib/plugins/syntaxhighlighter4/dist/syntaxhighlighter.js',
+            '_data' => '',
+        );
     }
 
     public function handle_jsprocessing(Doku_Event &$event, $param)

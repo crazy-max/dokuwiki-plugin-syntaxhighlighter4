@@ -99,7 +99,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
                     $attr = null;
                 }
 
-                return [$this->syntax, $attr, $content];
+                return array($this->syntax, $attr, $content);
         }
 
         return false;
@@ -171,7 +171,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
             $highlight_str = array_pop($highlight_array);
             $highlight_str = preg_replace("/.*highlight:\s{0,}(.*)/i", '$1', $highlight_str);
             // Remove [ ]
-            $highlight_str = str_replace(['[', ']'], '', $highlight_str);
+            $highlight_str = str_replace(array('[', ']'), '', $highlight_str);
             // Process ranges if exists
             $highlight_exp = explode(',', $highlight_str);
             foreach ($highlight_exp as $highlight_elt) {

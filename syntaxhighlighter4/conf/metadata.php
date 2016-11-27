@@ -4,7 +4,7 @@
  *
  * @author Cr@zy <webmaster@crazyws.fr>
  */
-$meta['theme'] = ['multichoice', '_choices' => [
+$meta['theme'] = array('multichoice', '_choices' => array(
     'theme-default.css',
     'theme-django.css',
     'theme-eclipse.css',
@@ -14,12 +14,12 @@ $meta['theme'] = ['multichoice', '_choices' => [
     'theme-midnight.css',
     'theme-rdark.css',
     'theme-swift.css',
-]];
+));
 
 // defaults
-$meta['autoLinks'] = ['onoff'];
-$meta['firstLine'] = ['numeric'];
-$meta['gutter'] = ['onoff'];
-$meta['htmlScript'] = ['onoff'];
-$meta['smartTabs'] = ['onoff'];
-$meta['tabSize'] = ['numeric'];
+$meta['autoLinks'] = array('onoff');
+$meta['firstLine'] = array('numeric');
+$meta['gutter'] = array('onoff');
+$meta['htmlScript'] = array('onoff');
+$meta['smartTabs'] = array('onoff');
+$meta['tabSize'] = array('numeric');
