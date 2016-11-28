@@ -2,6 +2,7 @@
 
 ## 2016/11/28
 
+* Add StyleCI config
 * Fix short syntax for arrays (Issue #8)
 * Fix method signatures for PHP 7.0 (Issue #6)
 
