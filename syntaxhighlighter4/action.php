@@ -35,7 +35,7 @@ class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
      *
      * @return void
      */
-    public function handle_metaheader(Doku_Event &$event, $param)
+    public function handle_metaheader(Doku_Event $event, $param)
     {
         // Add SyntaxHighlighter theme.
         $event->data['link'][] = array(
@@ -52,7 +52,7 @@ class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
         );
     }
 
-    public function handle_jsprocessing(Doku_Event &$event, $param)
+    public function handle_jsprocessing(Doku_Event $event, $param)
     {
         global $ID, $INFO;
 

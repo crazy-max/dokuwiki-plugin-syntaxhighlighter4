@@ -74,7 +74,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
      *
      * @return array Data for the renderer
      */
-    public function handle($match, $state, $pos, Doku_Handler &$handler)
+    public function handle($match, $state, $pos, Doku_Handler $handler)
     {
         switch ($state) {
             case DOKU_LEXER_ENTER:
@@ -114,7 +114,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
      *
      * @return bool If rendering was successful.
      */
-    public function render($mode, Doku_Renderer &$renderer, $data)
+    public function render($mode, Doku_Renderer $renderer, $data)
     {
         if ($mode != 'xhtml') {
             return false;
@@ -136,7 +136,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
         return true;
     }
 
-    private function procTitle(&$attr)
+    private function procTitle($attr)
     {
         $title = '';
 
@@ -155,7 +155,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
         return $title;
     }
 
-    private function procHighlight(&$attr)
+    private function procHighlight($attr)
     {
         $highlight = '';
 
