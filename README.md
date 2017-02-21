@@ -1,10 +1,15 @@
-[![GitHub release](https://img.shields.io/github/release/crazy-max/dokuwiki-plugin-syntaxhighlighter4.svg?style=flat-square)](https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/releases)
-[![Minimum DokuWiki Version](https://img.shields.io/badge/dokuwiki-%3E%3D%20Elenor%20of%20Tsort-yellow.svg?style=flat-square)](https://www.dokuwiki.org/releasenames)
-[![Code Quality](https://img.shields.io/codacy/grade/440e4b5de2ee4d37978a8e9e19f4b76f.svg?style=flat-square)](https://www.codacy.com/app/crazy-max/dokuwiki-plugin-syntaxhighlighter4)
-[![StyleCI](https://styleci.io/repos/61027126/shield?style=flat-square)](https://styleci.io/repos/61027126)
-[![Donate Paypal](https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square)](https://www.paypal.me/crazyws)
+<p align="center">
+  <a href="https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4" target="_blank"><img width="100" src="https://raw.githubusercontent.com/wiki/crazy-max/dokuwiki-plugin-syntaxhighlighter4/img/logo-128.png"></a>
+</p>
 
-# SyntaxHighlighter4 DokuWiki Plugin
+<p align="center">
+  <a href="https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/releases"><img src="https://img.shields.io/github/release/crazy-max/dokuwiki-plugin-syntaxhighlighter4.svg?style=flat-square" alt="Github Release"></a>
+  <a href="https://www.dokuwiki.org/releasenames"><img src="https://img.shields.io/badge/dokuwiki-%3E%3D%20Elenor%20of%20Tsort-yellow.svg?style=flat-square" alt="Minimum DokuWiki Version"></a>
+  <a href="https://www.codacy.com/app/crazy-max/dokuwiki-plugin-syntaxhighlighter4"><img src="https://img.shields.io/codacy/grade/440e4b5de2ee4d37978a8e9e19f4b76f.svg?style=flat-square" alt="Code Quality"></a>
+  <a href="https://styleci.io/repos/61027126"><img src="https://styleci.io/repos/61027126/shield?style=flat-square" alt="StyleCI"></a>
+  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NMMSKWE5DPNFU"><img src="https://img.shields.io/badge/donate-paypal-blue.svg?style=flat-square" alt="Donate Paypal"></a>
+  <a href="https://flattr.com/submit/auto?user_id=crazymax&url=https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4"><img src="https://img.shields.io/badge/flattr-this-green.svg?style=flat-square" alt="Flattr this!"></a>
+</p>
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
@@ -156,4 +161,5 @@ See `CHANGELOG.md`.
 
 ## License
 
-GPLv2. See `LICENSE` for more details.
+GPLv2. See `LICENSE` for more details.<br />
+Icon credit to [Snip Master](http://www.snipicons.com/).
