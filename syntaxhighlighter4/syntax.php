@@ -25,6 +25,8 @@ require_once DOKU_PLUGIN.'syntax.php';
 
 class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
 {
+    protected $syntax;
+
     /**
      * @return string Syntax mode type
      */
@@ -57,11 +59,17 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
     public function connectTo($mode)
     {
         $this->Lexer->addEntryPattern('<sxh(?=[^\r\n]*?>.*?</sxh>)', $mode, 'plugin_syntaxhighlighter4');
+        if ($this->getConf('override')) {
+            $this->Lexer->addEntryPattern('<code(?=[^\r\n]*?>.*?</code>)', $mode, 'plugin_syntaxhighlighter4');
+        }
     }
 
     public function postConnect()
     {
         $this->Lexer->addExitPattern('</sxh>', 'plugin_syntaxhighlighter4');
+        if ($this->getConf('override')) {
+            $this->Lexer->addExitPattern('</code>', 'plugin_syntaxhighlighter4');
+        }
     }
 
     /**
@@ -86,7 +94,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
                 // will include everything from <sxh ... to ... </sxh>
                 list($attr, $content) = preg_split('/>/u', $match, 2);
 
-                if ($this->syntax == 'sxh') {
+                if ($this->isSyntaxOk()) {
                     $attr = trim($attr);
                     if ($attr == null) {
                         // No brush and no options, use "text" with default options.
@@ -124,8 +132,8 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
             return true;
         }
 
-        list($syntax, $attr, $content) = $data;
-        if ($syntax == 'sxh') {
+        list($this->syntax, $attr, $content) = $data;
+        if ($this->isSyntaxOk()) {
             $title = $this->procTitle($attr);
             $highlight = $this->procHighlight($attr);
             $renderer->doc .= '<pre class="brush: '.strtolower($attr.$highlight).'"'.$title.'>'.$renderer->_xmlEntities($content).'</pre>';
@@ -195,6 +203,17 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
         }
 
         return $highlight;
+    }
+
+    private function isSyntaxOk()
+    {
+        if ($this->syntax == 'sxh') {
+            return true;
+        }
+        if ($this->syntax == 'code' && $this->getConf('override')) {
+            return true;
+        }
+        return false;
     }
 }
 

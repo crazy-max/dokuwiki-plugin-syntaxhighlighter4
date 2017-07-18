@@ -13,3 +13,4 @@ $conf['gutter'] = 1;
 $conf['htmlScript'] = 0;
 $conf['smartTabs'] = 1;
 $conf['tabSize'] = 4;
+$conf['override'] = 0;
