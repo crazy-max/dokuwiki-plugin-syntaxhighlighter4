@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017/07/19
+
+* Add option to override `<code>` DokuWiki syntax
+
 ## 2016/11/28
 
 * Add StyleCI config

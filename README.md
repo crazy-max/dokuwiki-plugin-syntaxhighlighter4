@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4" target="_blank"><img width="100" src="https://raw.githubusercontent.com/wiki/crazy-max/dokuwiki-plugin-syntaxhighlighter4/img/logo-128.png"></a>
+  <a href="https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4" target="_blank"><img width="100" src="https://raw.githubusercontent.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/master/resources/logo-128.png"></a>
 </p>
 
 <p align="center">
@@ -71,6 +71,7 @@ The plugin handles the [Block Title from SyntaxHighlighter 3](http://alexgorbatc
 * **htmlScript**: Allows you to highlight a mixture of HTML/XML code and a script which is very common in web development. Setting this value to true requires that you have shBrushXml.js loaded and that the brush you are using supports this feature `(default false)`
 * **smartTabs**: Allows you to turn smart tabs feature on and off `(default true)`
 * **tabSize**: Allows you to adjust tab size `(default 4)`
+* **override**: Override `<code>` DokuWiki syntax `(default false)`
 
 ## Example
 
@@ -107,7 +108,7 @@ The plugin handles the [Block Title from SyntaxHighlighter 3](http://alexgorbatc
 
 Expected result:
 
-![](https://raw.githubusercontent.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/master/screenshots/example.png)
+![](https://raw.githubusercontent.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/master/resources/example.png)
 
 ## Features
 
@@ -149,7 +150,7 @@ Example:
 
 Expected result:
 
-![](https://raw.githubusercontent.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/master/screenshots/highlight-range.png)
+![](https://raw.githubusercontent.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/master/resources/highlight-range.png)
 
 ## Issues and Features
 
