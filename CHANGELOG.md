@@ -2,7 +2,7 @@
 
 ## 2017/07/19
 
-* Add option to override `<code>` DokuWiki syntax
+* Add option to override `<code>` DokuWiki syntax (Issue #4)
 
 ## 2016/11/28
 
