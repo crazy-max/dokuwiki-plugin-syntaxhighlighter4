@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017/07/26
+
+* Remove unnecessary vertical scrollbar (Issue #14)
+
 ## 2017/07/19
 
 * Add option to override `<code>` DokuWiki syntax (Issue #4)

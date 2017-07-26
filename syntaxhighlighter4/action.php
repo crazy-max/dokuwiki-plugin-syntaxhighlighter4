@@ -44,6 +44,13 @@ class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
             'href' => DOKU_BASE.'lib/plugins/syntaxhighlighter4/dist/'.$this->getConf('theme'),
         );
 
+        // Override some CSS
+        $event->data['link'][] = array(
+            'rel' => 'stylesheet',
+            'type' => 'text/css',
+            'href' => DOKU_BASE.'lib/plugins/syntaxhighlighter4/dist/override.css',
+        );
+
         // Register SyntaxHighlighter javascript.
         $event->data['script'][] = array(
             'type' => 'text/javascript',

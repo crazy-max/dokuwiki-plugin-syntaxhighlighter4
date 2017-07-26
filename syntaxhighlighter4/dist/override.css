@@ -11,3 +11,8 @@
 .syntaxhighlighter textarea {
     box-shadow: none;
 }
+
+/** Remove vertical scrollbar (IE & Chrome) */
+.syntaxhighlighter {
+    overflow-y: hidden !important;
+}
