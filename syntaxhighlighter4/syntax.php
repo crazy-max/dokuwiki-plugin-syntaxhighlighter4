@@ -3,7 +3,7 @@
  * DokuWiki Plugin syntaxhighlighter4 (Syntax Component).
  *
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
- * @author  Cr@zy <webmaster@crazyws.fr>
+ * @author  CrazyMax <webmaster@crazyws.fr>
  */
 
 // must be run within Dokuwiki

@@ -2,7 +2,7 @@
 /**
  * english language file for syntaxhighlighter4 plugin.
  *
- * @author Cr@zy <webmaster@crazyws.fr>
+ * @author CrazyMax <webmaster@crazyws.fr>
  */
 $lang['theme'] = 'CSS theme for SyntaxHiglighter 4 (Default theme-default.css)';
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2018/02/09
+
+* Update author's name
+
 ## 2017/07/26
 
 * Remove unnecessary vertical scrollbar (Issue #14)

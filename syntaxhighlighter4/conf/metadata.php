@@ -2,7 +2,7 @@
 /**
  * Options for the syntaxhighlighter4 plugin.
  *
- * @author Cr@zy <webmaster@crazyws.fr>
+ * @author CrazyMax <webmaster@crazyws.fr>
  */
 $meta['theme'] = array('multichoice', '_choices' => array(
     'theme-default.css',
