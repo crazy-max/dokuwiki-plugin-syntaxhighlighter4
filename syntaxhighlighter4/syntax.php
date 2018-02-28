@@ -88,7 +88,7 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
     {
         switch ($state) {
             case DOKU_LEXER_ENTER:
-                $this->syntax = substr($match, 1);
+                $this->syntax = strtolower(substr($match, 1));
 
                 return false;
 
