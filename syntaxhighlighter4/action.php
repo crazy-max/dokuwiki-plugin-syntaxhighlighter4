@@ -11,8 +11,8 @@ if (!defined('DOKU_INC')) {
     die();
 }
 
-class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
-{
+class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin {
+
     /**
      * Registers a callback function for a given event.
      *
@@ -20,8 +20,7 @@ class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
      *
      * @return void
      */
-    public function register(Doku_Event_Handler $controller)
-    {
+    public function register(Doku_Event_Handler $controller) {
         $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this, 'handle_metaheader');
         $controller->register_hook('TPL_ACT_RENDER', 'AFTER', $this, 'handle_jsprocessing');
     }
@@ -35,8 +34,7 @@ class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
      *
      * @return void
      */
-    public function handle_metaheader(Doku_Event $event, $param)
-    {
+    public function handle_metaheader(Doku_Event $event, $param) {
         // Add SyntaxHighlighter theme.
         $event->data['link'][] = array(
             'rel' => 'stylesheet',
@@ -59,8 +57,7 @@ class action_plugin_syntaxhighlighter4 extends DokuWiki_Action_Plugin
         );
     }
 
-    public function handle_jsprocessing(Doku_Event $event, $param)
-    {
+    public function handle_jsprocessing(Doku_Event $event, $param) {
         global $ID, $INFO;
 
         // Ensures code will be written only on base page

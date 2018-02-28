@@ -4,6 +4,7 @@
  *
  * @author CrazyMax <webmaster@crazyws.fr>
  */
+
 $lang['theme'] = 'CSS theme for SyntaxHiglighter 4 (Default theme-default.css)';
 
 // conf

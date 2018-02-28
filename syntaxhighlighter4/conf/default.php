@@ -4,6 +4,7 @@
  *
  * @author CrazyMax <webmaster@crazyws.fr>
  */
+
 $conf['theme'] = 'theme-default.css';
 
 // defaults

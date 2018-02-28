@@ -4,6 +4,7 @@
  *
  * @author CrazyMax <webmaster@crazyws.fr>
  */
+
 $meta['theme'] = array('multichoice', '_choices' => array(
     'theme-default.css',
     'theme-django.css',
