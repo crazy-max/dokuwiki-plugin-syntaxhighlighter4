@@ -23,4 +23,4 @@ $meta['gutter'] = array('onoff');
 $meta['htmlScript'] = array('onoff');
 $meta['smartTabs'] = array('onoff');
 $meta['tabSize'] = array('numeric');
-$meta['override'] = array('onoff');
+$meta['override'] = array('multicheckbox', '_choices' => array('code','file'));

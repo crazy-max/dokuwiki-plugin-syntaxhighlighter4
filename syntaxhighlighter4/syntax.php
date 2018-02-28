@@ -59,16 +59,18 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
     public function connectTo($mode)
     {
         $this->Lexer->addEntryPattern('<sxh(?=[^\r\n]*?>.*?</sxh>)', $mode, 'plugin_syntaxhighlighter4');
-        if ($this->getConf('override')) {
-            $this->Lexer->addEntryPattern('<code(?=[^\r\n]*?>.*?</code>)', $mode, 'plugin_syntaxhighlighter4');
+        $tags = explode(',', $this->getConf('override'));
+        foreach ($tags as $tag) {
+            $this->Lexer->addEntryPattern('<' . $tag . '(?=[^\r\n]*?>.*?</' . $tag . '>)', $mode, 'plugin_syntaxhighlighter4');
         }
     }
 
     public function postConnect()
     {
         $this->Lexer->addExitPattern('</sxh>', 'plugin_syntaxhighlighter4');
-        if ($this->getConf('override')) {
-            $this->Lexer->addExitPattern('</code>', 'plugin_syntaxhighlighter4');
+        $tags = explode(',', $this->getConf('override'));
+        foreach ($tags as $tag) {
+            $this->Lexer->addExitPattern('</' . $tag . '>', 'plugin_syntaxhighlighter4');
         }
     }
 
@@ -146,9 +148,12 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
 
     private function procTitle($attr)
     {
-        $title = '';
-
-        if (preg_match('/title:/i', $attr)) {
+        if ($this->syntax == 'file') {
+            $title = trim(substr($attr, strpos($attr, ' ') + 1));
+            if (!empty($title)) {
+                return ' title="' . $title . '"';
+            }
+        } elseif (preg_match('/title:/i', $attr)) {
             // Extract title(s) from $attr string.
             $attr_array = explode(';', $attr);
             $title_array = preg_grep('/title:/i', $attr_array);
@@ -157,10 +162,9 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
             $attr = implode(';', $not_title_array);
             // If there are multiple titles, use the last one.
             $title = array_pop($title_array);
-            $title = ' title="'.preg_replace("/.*title:\s{0,}(.*)/i", '$1', $title).'"';
+            return ' title="'.preg_replace("/.*title:\s{0,}(.*)/i", '$1', $title).'"';
         }
-
-        return $title;
+        return '';
     }
 
     private function procHighlight($attr)
@@ -210,8 +214,11 @@ class syntax_plugin_syntaxhighlighter4 extends DokuWiki_Syntax_Plugin
         if ($this->syntax == 'sxh') {
             return true;
         }
-        if ($this->syntax == 'code' && $this->getConf('override')) {
-            return true;
+        $tags = explode(',', $this->getConf('override'));
+        foreach ($tags as $tag) {
+            if ($this->syntax == $tag) {
+                return true;
+            }
         }
         return false;
     }

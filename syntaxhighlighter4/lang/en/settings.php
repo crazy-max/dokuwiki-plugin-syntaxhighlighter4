@@ -13,6 +13,6 @@ $lang['gutter'] = 'Allows you to turn gutter with line numbers on and off (Defau
 $lang['htmlScript'] = 'Allows you to highlight a mixture of HTML/XML code and a script which is very common in web development (Default false)';
 $lang['smartTabs'] = 'Allows you to turn smart tabs feature on and off (Default true)';
 $lang['tabSize'] = 'Allows you to adjust tab size (Default 4)';
-$lang['override'] = 'Override &lt;code&gt; DokuWiki syntax (Default false)';
+$lang['override'] = 'List of tags to override';
 
 //Setup VIM: ex: et ts=4 :
