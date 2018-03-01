@@ -2,7 +2,7 @@
 
 ## 2018/03/01
 
-* Change option `override` with a list of tags (code, file) to override
+* Change option `override` with a list of tags (code, file) to override (Issue #16)
 * Make tag case unsensitive
 * New custom brushes added: halcon,IEC61131,kotlin,latex,Makefile,mel,objective-c,yaml
 * Upgrade SyntaxHighlighter to commit syntaxhighlighter/syntaxhighlighter@37724fd
