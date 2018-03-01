@@ -49,7 +49,7 @@ The plugin handles the [Block Title from SyntaxHighlighter 3](http://alexgorbatc
 * **htmlScript**: Allows you to highlight a mixture of HTML/XML code and a script which is very common in web development. Setting this value to true requires that you have shBrushXml.js loaded and that the brush you are using supports this feature `(default false)`
 * **smartTabs**: Allows you to turn smart tabs feature on and off `(default true)`
 * **tabSize**: Allows you to adjust tab size `(default 4)`
-* **override**: Override `<code>` DokuWiki syntax `(default false)`
+* **override**: List of tags to override
 
 ## Example
 
@@ -183,7 +183,6 @@ Expected result:
   * rdark
   * swift
 * **Custom themes**
-  *
 
 ## How can i help ?
 
