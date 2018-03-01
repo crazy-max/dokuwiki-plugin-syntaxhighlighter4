@@ -34,11 +34,11 @@
 
     <target name="release" depends="load.lib">
         <echo message="Clean release folder..." />
-        <delete dir="${bin.path}/${release.base}" />
+        <delete dir="${bin.path}/${release.src}" />
 
-        <echo message="Copy ${release.base} folder..." />
+        <echo message="Copy ${release.src} folder..." />
         <copy todir="${bin.path}/${release.base}">
-            <fileset dir="${project.basedir}/${release.base}" />
+            <fileset dir="${project.basedir}/${release.src}" />
         </copy>
 
         <echo message="Copy others files..." />
@@ -49,7 +49,7 @@
         </copy>
 
         <echo message="Insert plugins info in ${bin.path}/${release.base}/plugin.info.txt..." />
-        <copy file="${project.basedir}/${release.base}/plugin.info.txt" tofile="${bin.path}/${release.base}/plugin.info.txt" overwrite="true">
+        <copy file="${project.basedir}/${release.src}/plugin.info.txt" tofile="${bin.path}/${release.base}/plugin.info.txt" overwrite="true">
             <filterset>
                 <filter token="RELEASE_BASE" value="${release.base}" />
                 <filter token="RELEASE_AUTHOR" value="${release.author}" />

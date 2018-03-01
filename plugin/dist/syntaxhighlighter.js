@@ -6,7 +6,7 @@
  * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
  * 
  * @version
- * 4.0.1 (Sat, 18 Jun 2016 23:45:08 GMT)
+ * 4.0.1 (Thu, 01 Mar 2018 15:43:03 GMT)
  * 
  * @copyright
  * Copyright (C) 2004-2016 Alex Gorbatchev.
@@ -58,7 +58,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -69,7 +69,7 @@
 	var _core = __webpack_require__(1);
 	
 	Object.keys(_core).forEach(function (key) {
-	  if (key === "default") return;
+	  if (key === "default" || key === "__esModule") return;
 	  Object.defineProperty(exports, key, {
 	    enumerable: true,
 	    get: function get() {
@@ -78,13 +78,13 @@
 	  });
 	});
 	
-	var _domready = __webpack_require__(52);
+	var _domready = __webpack_require__(60);
 	
 	var _domready2 = _interopRequireDefault(_domready);
 	
 	var _core2 = _interopRequireDefault(_core);
 	
-	var _dasherize = __webpack_require__(53);
+	var _dasherize = __webpack_require__(61);
 	
 	var dasherize = _interopRequireWildcard(_dasherize);
 	
@@ -94,16 +94,16 @@
 	
 	// configured through the `--compat` parameter.
 	if (true) {
-	  __webpack_require__(54);
+	  __webpack_require__(62);
 	}
 	
 	(0, _domready2.default)(function () {
 	  return _core2.default.highlight(dasherize.object(window.syntaxhighlighterConfig || {}));
 	});
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -405,13 +405,29 @@
 	
 	registerBrush(__webpack_require__(51));
 	
+	registerBrush(__webpack_require__(52));
+	
+	registerBrush(__webpack_require__(53));
+	
+	registerBrush(__webpack_require__(54));
+	
+	registerBrush(__webpack_require__(55));
+	
+	registerBrush(__webpack_require__(56));
+	
+	registerBrush(__webpack_require__(57));
+	
+	registerBrush(__webpack_require__(58));
+	
+	registerBrush(__webpack_require__(59));
+	
 	/*
-
+	
 	 */
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -468,9 +484,9 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -501,9 +517,9 @@
 	  scriptScriptTags: { left: /(&lt;|<)\s*script.*?(&gt;|>)/gi, right: /(&lt;|<)\/\s*script\s*(&gt;|>)/gi }
 	};
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*!
 	 * XRegExp 3.1.0-dev
@@ -1818,9 +1834,9 @@
 	            }
 	            // Backreference
 	        } else if (backref) {
-	                // Rewrite the backreference
-	                return '\\' + (+backref + numPriorCaptures);
-	            }
+	            // Rewrite the backreference
+	            return '\\' + (+backref + numPriorCaptures);
+	        }
 	
 	        return match;
 	    },
@@ -2314,9 +2330,9 @@
 	
 	module.exports = XRegExp;
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -2327,7 +2343,7 @@
 	var _match = __webpack_require__(6);
 	
 	Object.keys(_match).forEach(function (key) {
-	  if (key === "default") return;
+	  if (key === "default" || key === "__esModule") return;
 	  Object.defineProperty(exports, key, {
 	    enumerable: true,
 	    get: function get() {
@@ -2339,7 +2355,7 @@
 	var _applyRegexList = __webpack_require__(7);
 	
 	Object.keys(_applyRegexList).forEach(function (key) {
-	  if (key === "default") return;
+	  if (key === "default" || key === "__esModule") return;
 	  Object.defineProperty(exports, key, {
 	    enumerable: true,
 	    get: function get() {
@@ -2348,9 +2364,9 @@
 	  });
 	});
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	"use strict";
 	
@@ -2383,9 +2399,9 @@
 	  return Match;
 	}();
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -2393,7 +2409,7 @@
 	  value: true
 	});
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
 	exports.applyRegexList = applyRegexList;
 	
@@ -2420,9 +2436,9 @@
 	  return result;
 	}
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -2518,9 +2534,9 @@
 	  return matches;
 	}
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2841,9 +2857,9 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2934,9 +2950,9 @@
 	  toBoolean: toBoolean
 	};
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -2958,9 +2974,9 @@
 	  return code;
 	};
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2974,9 +2990,9 @@
 	   .replace(/\r/g, ' ');
 	};
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -2988,9 +3004,9 @@
 	  return code;
 	};
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3002,9 +3018,9 @@
 	  return code;
 	};
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3045,9 +3061,9 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3101,9 +3117,9 @@
 	  }
 	};
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3323,9 +3339,9 @@
 	  findElementsToHighlight: findElementsToHighlight
 	};
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3344,9 +3360,9 @@
 	  tagName: 'pre'
 	};
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -3395,9 +3411,9 @@
 	  'html-script': false
 	};
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
 	
@@ -3462,14 +3478,13 @@
 	module.exports = HtmlScript;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(21)))
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	'use strict';
 	
 	// shim for using process in browser
-	
 	var process = module.exports = {};
 	
 	// cached from whatever global is present so that test runners that stub it
@@ -3480,22 +3495,79 @@
 	var cachedSetTimeout;
 	var cachedClearTimeout;
 	
+	function defaultSetTimout() {
+	    throw new Error('setTimeout has not been defined');
+	}
+	function defaultClearTimeout() {
+	    throw new Error('clearTimeout has not been defined');
+	}
 	(function () {
 	    try {
-	        cachedSetTimeout = setTimeout;
+	        if (typeof setTimeout === 'function') {
+	            cachedSetTimeout = setTimeout;
+	        } else {
+	            cachedSetTimeout = defaultSetTimout;
+	        }
 	    } catch (e) {
-	        cachedSetTimeout = function cachedSetTimeout() {
-	            throw new Error('setTimeout is not defined');
-	        };
+	        cachedSetTimeout = defaultSetTimout;
 	    }
 	    try {
-	        cachedClearTimeout = clearTimeout;
+	        if (typeof clearTimeout === 'function') {
+	            cachedClearTimeout = clearTimeout;
+	        } else {
+	            cachedClearTimeout = defaultClearTimeout;
+	        }
 	    } catch (e) {
-	        cachedClearTimeout = function cachedClearTimeout() {
-	            throw new Error('clearTimeout is not defined');
-	        };
+	        cachedClearTimeout = defaultClearTimeout;
 	    }
 	})();
+	function runTimeout(fun) {
+	    if (cachedSetTimeout === setTimeout) {
+	        //normal enviroments in sane situations
+	        return setTimeout(fun, 0);
+	    }
+	    // if setTimeout wasn't available but was latter defined
+	    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
+	        cachedSetTimeout = setTimeout;
+	        return setTimeout(fun, 0);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedSetTimeout(fun, 0);
+	    } catch (e) {
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+	            return cachedSetTimeout.call(null, fun, 0);
+	        } catch (e) {
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+	            return cachedSetTimeout.call(this, fun, 0);
+	        }
+	    }
+	}
+	function runClearTimeout(marker) {
+	    if (cachedClearTimeout === clearTimeout) {
+	        //normal enviroments in sane situations
+	        return clearTimeout(marker);
+	    }
+	    // if clearTimeout wasn't available but was latter defined
+	    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
+	        cachedClearTimeout = clearTimeout;
+	        return clearTimeout(marker);
+	    }
+	    try {
+	        // when when somebody has screwed with setTimeout but no I.E. maddness
+	        return cachedClearTimeout(marker);
+	    } catch (e) {
+	        try {
+	            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+	            return cachedClearTimeout.call(null, marker);
+	        } catch (e) {
+	            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+	            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
+	            return cachedClearTimeout.call(this, marker);
+	        }
+	    }
+	}
 	var queue = [];
 	var draining = false;
 	var currentQueue;
@@ -3520,7 +3592,7 @@
 	    if (draining) {
 	        return;
 	    }
-	    var timeout = cachedSetTimeout(cleanUpNextTick);
+	    var timeout = runTimeout(cleanUpNextTick);
 	    draining = true;
 	
 	    var len = queue.length;
@@ -3537,7 +3609,7 @@
 	    }
 	    currentQueue = null;
 	    draining = false;
-	    cachedClearTimeout(timeout);
+	    runClearTimeout(timeout);
 	}
 	
 	process.nextTick = function (fun) {
@@ -3549,7 +3621,7 @@
 	    }
 	    queue.push(new Item(fun, args));
 	    if (queue.length === 1 && !draining) {
-	        cachedSetTimeout(drainQueue, 0);
+	        runTimeout(drainQueue);
 	    }
 	};
 	
@@ -3577,6 +3649,12 @@
 	process.removeListener = noop;
 	process.removeAllListeners = noop;
 	process.emit = noop;
+	process.prependListener = noop;
+	process.prependOnceListener = noop;
+	
+	process.listeners = function (name) {
+	    return [];
+	};
 	
 	process.binding = function (name) {
 	    throw new Error('process.binding is not supported');
@@ -3592,9 +3670,9 @@
 	    return 0;
 	};
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3654,7 +3732,7 @@
 	  }, {
 	    key: 'getHtml',
 	    value: function getHtml(code) {
-	      var params = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+	      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 	
 	      var matches = (0, _syntaxhighlighterMatch.applyRegexList)(code, this.regexList);
 	      var renderer = new _syntaxhighlighterHtmlRenderer2.default(code, matches, params);
@@ -3665,9 +3743,9 @@
 	  return BrushBase;
 	}();
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3751,9 +3829,9 @@
 	Brush.aliases = ['applescript'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3803,9 +3881,9 @@
 	Brush.aliases = ['actionscript3', 'as3'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3861,9 +3939,9 @@
 	Brush.aliases = ['bash', 'shell', 'sh'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3908,9 +3986,9 @@
 	Brush.aliases = ['coldfusion', 'cf'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -3957,9 +4035,9 @@
 	Brush.aliases = ['cpp', 'cc', 'c++', 'c', 'h', 'hpp', 'h++'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4011,9 +4089,9 @@
 	Brush.aliases = ['c#', 'c-sharp', 'csharp'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 29 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4074,9 +4152,9 @@
 	Brush.aliases = ['css'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4117,9 +4195,9 @@
 	Brush.aliases = ['delphi', 'pascal', 'pas'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 31 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4152,9 +4230,9 @@
 	Brush.aliases = ['diff', 'patch'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 32 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4198,9 +4276,9 @@
 	Brush.aliases = ['erl', 'erlang'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 33 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4255,9 +4333,9 @@
 	Brush.aliases = ['groovy'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 34 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4337,9 +4415,9 @@
 	Brush.aliases = ['haxe', 'hx'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 35 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4388,9 +4466,9 @@
 	Brush.aliases = ['java'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 36 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4433,9 +4511,9 @@
 	Brush.aliases = ['jfx', 'javafx'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 37 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4472,9 +4550,9 @@
 	Brush.aliases = ['js', 'jscript', 'javascript', 'json'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 38 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4556,9 +4634,9 @@
 	Brush.aliases = ['perl', 'Perl', 'pl'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 39 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4601,7 +4679,7 @@
 	  function Brush() {
 	    _classCallCheck(this, Brush);
 	
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Brush).call(this));
+	    var _this = _possibleConstructorReturn(this, (Brush.__proto__ || Object.getPrototypeOf(Brush)).call(this));
 	
 	    _this.regexList = [{ regex: _syntaxhighlighterRegex.commonRegExp.singleLineCComments, css: 'comments' }, { regex: _syntaxhighlighterRegex.commonRegExp.multiLineCComments, css: 'comments' }, { regex: _syntaxhighlighterRegex.commonRegExp.doubleQuotedString, css: 'string' }, { regex: _syntaxhighlighterRegex.commonRegExp.singleQuotedString, css: 'string' }, { regex: /\$\w+/g, css: 'variable' }, { regex: new RegExp(_this.getKeywords(functions), 'gmi'), css: 'functions' }, { regex: new RegExp(_this.getKeywords(constants), 'gmi'), css: 'constants' }, { regex: new RegExp(_this.getKeywords(keywords), 'gm'), css: 'keyword' }];
 	
@@ -4614,9 +4692,9 @@
 	
 	exports.default = Brush;
 
-/***/ },
+/***/ }),
 /* 40 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4631,9 +4709,9 @@
 	Brush.aliases = ['text', 'plain'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 41 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4697,9 +4775,9 @@
 	Brush.aliases = ['powershell', 'ps', 'posh'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 42 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4754,9 +4832,9 @@
 	Brush.aliases = ['py', 'python'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 43 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4803,9 +4881,9 @@
 	Brush.aliases = ['ruby', 'rails', 'ror', 'rb'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 44 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4879,9 +4957,9 @@
 	Brush.aliases = ['sass', 'scss'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 45 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4926,9 +5004,9 @@
 	Brush.aliases = ['scala'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 46 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -4970,9 +5048,9 @@
 	Brush.aliases = ['sql'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 47 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -5105,9 +5183,9 @@
 	Brush.aliases = ['swift'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 48 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -5147,9 +5225,9 @@
 	Brush.aliases = ['tap', 'Tap', 'TAP'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 49 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -5157,7 +5235,7 @@
 	var regexLib = __webpack_require__(3).commonRegExp;
 	
 	function Brush() {
-	  var keywords = 'break case catch class continue ' + 'default delete do else enum export extends false  ' + 'for function if implements import in instanceof ' + 'interface let new null package private protected ' + 'static return super switch ' + 'this throw true try typeof var while with yield' + ' any bool declare get module number public set string'; // TypeScript-specific, everything above is common with JavaScript
+	  var keywords = 'break case catch class continue ' + 'default delete do else enum export extends false  ' + 'for function if implements import in instanceof ' + 'interface let new null package private protected ' + 'static return super switch ' + 'this throw true try typeof var while with yield' + ' any bool declare get module never number public readonly set string'; // TypeScript-specific, everything above is common with JavaScript
 	
 	  this.regexList = [{
 	    regex: regexLib.multiLineDoubleQuotedString,
@@ -5183,9 +5261,9 @@
 	Brush.aliases = ['ts', 'typescript'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 50 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -5216,9 +5294,9 @@
 	Brush.aliases = ['vb', 'vbnet'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 51 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -5266,13 +5344,352 @@
 	Brush.aliases = ['xml', 'xhtml', 'xslt', 'html', 'plist'];
 	module.exports = Brush;
 
-/***/ },
+/***/ }),
 /* 52 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+	var BrushBase = __webpack_require__(22);
+	var regexLib = __webpack_require__(3).commonRegExp;
+	
+	function Brush() {
+	  var ops = 'abs_diff_image abs_funct_1d abs_image abs_matrix abs_matrix_mod access_channel acos_image activate_compute_device adapt_template add_channels add_class_train_data_gmm add_class_train_data_knn add_class_train_data_mlp add_class_train_data_svm add_deformable_surface_model_reference_point add_deformable_surface_model_sample add_image add_matrix add_matrix_mod add_metrology_object_circle_measure add_metrology_object_ellipse_measure add_metrology_object_generic add_metrology_object_line_measure add_metrology_object_rectangle2_measure add_noise_distribution add_noise_white add_noise_white_contour_xld add_sample_class_gmm add_sample_class_knn add_sample_class_mlp add_sample_class_svm add_sample_class_train_data add_sample_identifier_preparation_data add_sample_identifier_training_data add_samples_image_class_gmm add_samples_image_class_knn add_samples_image_class_mlp add_samples_image_class_svm add_scene_3d_camera add_scene_3d_instance add_scene_3d_label add_scene_3d_light add_texture_inspection_model_image adjust_mosaic_images affine_trans_contour_xld affine_trans_image affine_trans_image_size affine_trans_object_model_3d affine_trans_pixel affine_trans_point_2d affine_trans_point_3d affine_trans_polygon_xld affine_trans_region align_metrology_model angle_ll angle_lx anisotropic_diffusion append_channel append_ocr_trainf apply_bead_inspection_model apply_color_trans_lut apply_distance_transform_xld apply_metrology_model apply_sample_identifier apply_sheet_of_light_calibration apply_texture_inspection_model approx_chain approx_chain_simple area_center area_center_gray area_center_points_xld area_center_xld area_holes area_object_model_3d asin_image atan2_image atan_image attach_background_to_window attach_drawing_object_to_window auto_threshold axis_angle_to_quat background_seg bandpass_image best_match best_match_mg best_match_pre_mg best_match_rot best_match_rot_mg bilateral_filter bin_threshold binary_threshold binocular_calibration binocular_disparity binocular_disparity_mg binocular_disparity_ms binocular_distance binocular_distance_mg binocular_distance_ms binomial_filter bit_and bit_lshift bit_mask bit_not bit_or bit_rshift bit_slice bit_xor bottom_hat boundary broadcast_condition bundle_adjust_mosaic calibrate_cameras calibrate_hand_eye calibrate_sheet_of_light caltab_points cam_mat_to_cam_par cam_par_pose_to_hom_mat3d cam_par_to_cam_mat camera_calibration cfa_to_rgb change_domain change_format change_radial_distortion_cam_par change_radial_distortion_contours_xld change_radial_distortion_image change_radial_distortion_points channels_to_image char_threshold check_difference circularity circularity_xld class_2dim_sup class_2dim_unsup class_ndim_box class_ndim_norm classify_class_gmm classify_class_knn classify_class_mlp classify_class_svm classify_image_class_gmm classify_image_class_knn classify_image_class_lut classify_image_class_mlp classify_image_class_svm clear_all_bar_code_models clear_all_barriers clear_all_calib_data clear_all_camera_setup_models clear_all_class_gmm clear_all_class_knn clear_all_class_lut clear_all_class_mlp clear_all_class_svm clear_all_class_train_data clear_all_color_trans_luts clear_all_component_models clear_all_conditions clear_all_data_code_2d_models clear_all_deformable_models clear_all_descriptor_models clear_all_events clear_all_lexica clear_all_matrices clear_all_metrology_models clear_all_mutexes clear_all_ncc_models clear_all_object_model_3d clear_all_ocr_class_knn clear_all_ocr_class_mlp clear_all_ocr_class_svm clear_all_sample_identifiers clear_all_scattered_data_interpolators clear_all_serialized_items clear_all_shape_model_3d clear_all_shape_models clear_all_sheet_of_light_models clear_all_stereo_models clear_all_surface_matching_results clear_all_surface_models clear_all_templates clear_all_text_models clear_all_text_results clear_all_training_components clear_all_variation_models clear_bar_code_model clear_barrier clear_bead_inspection_model clear_calib_data clear_camera_setup_model clear_class_gmm clear_class_knn clear_class_lut clear_class_mlp clear_class_svm clear_class_train_data clear_color_trans_lut clear_component_model clear_condition clear_data_code_2d_model clear_deformable_model clear_deformable_surface_matching_result clear_deformable_surface_model clear_descriptor_model clear_distance_transform_xld clear_drawing_object clear_event clear_lexicon clear_matrix clear_message clear_message_queue clear_metrology_model clear_metrology_object clear_mutex clear_ncc_model clear_obj clear_object_model_3d clear_ocr_class_cnn clear_ocr_class_knn clear_ocr_class_mlp clear_ocr_class_svm clear_rectangle clear_sample_identifier clear_samples_class_gmm clear_samples_class_mlp clear_samples_class_svm clear_sampset clear_scattered_data_interpolator clear_scene_3d clear_serial clear_serialized_item clear_shape_model clear_shape_model_3d clear_sheet_of_light_model clear_stereo_model clear_surface_matching_result clear_surface_model clear_template clear_text_model clear_text_result clear_texture_inspection_model clear_texture_inspection_result clear_train_data_variation_model clear_training_components clear_variation_model clear_window clip_contours_xld clip_end_points_contours_xld clip_region clip_region_rel close_all_bg_esti close_all_class_box close_all_files close_all_framegrabbers close_all_measures close_all_ocrs close_all_ocvs close_all_serials close_all_sockets close_bg_esti close_class_box close_contours_xld close_edges close_edges_length close_file close_framegrabber close_io_channel close_io_device close_measure close_ocr close_ocv close_serial close_socket close_window closest_point_transform closing closing_circle closing_golay closing_rectangle1 cluster_model_components coherence_enhancing_diff combine_roads_xld compactness compactness_xld compare_ext_variation_model compare_obj compare_variation_model complement complex_to_real compose2 compose3 compose4 compose5 compose6 compose7 compose_funct_1d concat_obj concat_ocr_trainf connect_and_holes connect_grid_points connection connection_object_model_3d contlength contour_point_num_xld contour_to_world_plane_xld control_io_channel control_io_device control_io_interface convert_coordinates_image_to_window convert_coordinates_window_to_image convert_image_type convert_map_type convert_point_3d_cart_to_spher convert_point_3d_spher_to_cart convert_pose_type convert_tuple_to_vector_1d convert_vector_to_tuple convex_hull_object_model_3d convexity convexity_xld convol_fft convol_gabor convol_image cooc_feature_image cooc_feature_matrix copy_file copy_image copy_matrix copy_metrology_model copy_metrology_object copy_obj copy_object_model_3d copy_rectangle corner_response correlation_fft cos_image count_channels count_obj count_relation count_seconds create_aniso_shape_model create_aniso_shape_model_xld create_bar_code_model create_barrier create_bead_inspection_model create_bg_esti create_calib_data create_calib_descriptor_model create_caltab create_cam_pose_look_at_point create_camera_setup_model create_class_box create_class_gmm create_class_knn create_class_lut_gmm create_class_lut_knn create_class_lut_mlp create_class_lut_svm create_class_mlp create_class_svm create_class_train_data create_color_trans_lut create_component_model create_condition create_data_code_2d_model create_deformable_surface_model create_distance_transform_xld create_drawing_object_circle create_drawing_object_circle_sector create_drawing_object_ellipse create_drawing_object_ellipse_sector create_drawing_object_line create_drawing_object_rectangle1 create_drawing_object_rectangle2 create_drawing_object_text create_drawing_object_xld create_event create_funct_1d_array create_funct_1d_pairs create_lexicon create_local_deformable_model create_local_deformable_model_xld create_matrix create_message create_message_queue create_metrology_model create_mutex create_ncc_model create_ocr_class_box create_ocr_class_knn create_ocr_class_mlp create_ocr_class_svm create_ocv_proj create_planar_calib_deformable_model create_planar_calib_deformable_model_xld create_planar_uncalib_deformable_model create_planar_uncalib_deformable_model_xld create_pose create_rectification_grid create_sample_identifier create_scaled_shape_model create_scaled_shape_model_xld create_scattered_data_interpolator create_scene_3d create_serialized_item_ptr create_shape_model create_shape_model_3d create_shape_model_xld create_sheet_of_light_calib_object create_sheet_of_light_model create_stereo_model create_surface_model create_template create_template_rot create_text_model create_text_model_reader create_texture_inspection_model create_trained_component_model create_uncalib_descriptor_model create_variation_model critical_points_sub_pix crop_contours_xld crop_domain crop_domain_rel crop_part crop_rectangle1 deactivate_all_compute_devices deactivate_compute_device decode_bar_code_rectangle2 decompose2 decompose3 decompose4 decompose5 decompose6 decompose7 decompose_matrix delete_file depth_from_focus dequeue_message derivate_funct_1d derivate_gauss derivate_vector_field descript_class_box deserialize_bar_code_model deserialize_calib_data deserialize_cam_par deserialize_camera_setup_model deserialize_class_box deserialize_class_gmm deserialize_class_knn deserialize_class_mlp deserialize_class_svm deserialize_class_train_data deserialize_component_model deserialize_data_code_2d_model deserialize_deformable_model deserialize_deformable_surface_model deserialize_descriptor_model deserialize_distance_transform_xld deserialize_dual_quat deserialize_fft_optimization_data deserialize_hom_mat2d deserialize_hom_mat3d deserialize_image deserialize_matrix deserialize_measure deserialize_metrology_model deserialize_ncc_model deserialize_object deserialize_object_model_3d deserialize_ocr deserialize_ocr_class_cnn deserialize_ocr_class_knn deserialize_ocr_class_mlp deserialize_ocr_class_svm deserialize_ocv deserialize_pose deserialize_quat deserialize_region deserialize_sample_identifier deserialize_shape_model deserialize_shape_model_3d deserialize_sheet_of_light_model deserialize_surface_model deserialize_template deserialize_texture_inspection_model deserialize_training_components deserialize_tuple deserialize_variation_model deserialize_xld detach_background_from_window detach_drawing_object_from_window detect_edge_segments determinant_matrix determine_deformable_model_params determine_ncc_model_params determine_shape_model_params dev_clear_obj dev_clear_window dev_close_inspect_ctrl dev_close_tool dev_close_window dev_disp_text dev_display dev_error_var dev_get_exception_data dev_get_preferences dev_get_system dev_get_window dev_inspect_ctrl dev_map_par dev_map_prog dev_map_var dev_open_dialog dev_open_file_dialog dev_open_tool dev_open_window dev_set_check dev_set_color dev_set_colored dev_set_draw dev_set_line_width dev_set_lut dev_set_paint dev_set_part dev_set_preferences dev_set_shape dev_set_tool_geometry dev_set_window dev_set_window_extents dev_show_tool dev_unmap_par dev_unmap_prog dev_unmap_var dev_update_pc dev_update_time dev_update_var dev_update_window deviation_image deviation_n diameter_region diameter_xld diff_of_gauss difference difference_closed_contours_xld difference_closed_polygons_xld dilation1 dilation2 dilation_circle dilation_golay dilation_rectangle1 dilation_seq disp_arc disp_arrow disp_caltab disp_channel disp_circle disp_color disp_cross disp_distribution disp_ellipse disp_image disp_line disp_lut disp_obj disp_object_model_3d disp_polygon disp_rectangle1 disp_rectangle2 disp_region disp_text disp_xld disparity_image_to_xyz disparity_to_distance disparity_to_point_3d display_scene_3d dist_ellipse_contour_points_xld dist_ellipse_contour_xld dist_rectangle2_contour_points_xld distance_cc distance_cc_min distance_contours_xld distance_funct_1d distance_lc distance_lr distance_object_model_3d distance_pc distance_pl distance_pp distance_pr distance_ps distance_rr_min distance_rr_min_dil distance_sc distance_sl distance_sr distance_ss distance_to_disparity distance_transform div_element_matrix div_element_matrix_mod div_image do_ocr_multi do_ocr_multi_class_cnn do_ocr_multi_class_knn do_ocr_multi_class_mlp do_ocr_multi_class_svm do_ocr_single do_ocr_single_class_cnn do_ocr_single_class_knn do_ocr_single_class_mlp do_ocr_single_class_svm do_ocr_word_cnn do_ocr_word_knn do_ocr_word_mlp do_ocr_word_svm do_ocv_simple dots_image drag_region1 drag_region2 drag_region3 draw_circle draw_circle_mod draw_ellipse draw_ellipse_mod draw_line draw_line_mod draw_nurbs draw_nurbs_interp draw_nurbs_interp_mod draw_nurbs_mod draw_point draw_point_mod draw_polygon draw_rectangle1 draw_rectangle1_mod draw_rectangle2 draw_rectangle2_mod draw_region draw_xld draw_xld_mod dual_quat_compose dual_quat_conjugate dual_quat_interpolate dual_quat_normalize dual_quat_to_hom_mat3d dual_quat_to_pose dual_quat_to_screw dual_quat_trans_line_3d dual_rank dual_threshold dump_window dump_window_image dyn_threshold eccentricity eccentricity_points_xld eccentricity_xld edges_color edges_color_sub_pix edges_image edges_object_model_3d edges_sub_pix eigenvalues_general_matrix eigenvalues_symmetric_matrix eliminate_min_max eliminate_runs eliminate_sp elliptic_axis elliptic_axis_gray elliptic_axis_points_xld elliptic_axis_xld emphasize energy_gabor enqueue_message enquire_class_box enquire_reject_class_box entropy_gray entropy_image equ_histo_image erosion1 erosion2 erosion_circle erosion_golay erosion_rectangle1 erosion_seq essential_to_fundamental_matrix estimate_al_am estimate_noise estimate_sl_al_lr estimate_sl_al_zc estimate_tilt_lr estimate_tilt_zc euler_number evaluate_class_gmm evaluate_class_mlp evaluate_class_svm executable_expression exhaustive_match exhaustive_match_mg exp_image expand_domain_gray expand_gray expand_gray_ref expand_line expand_region fast_match fast_match_mg fast_threshold fft_generic fft_image fft_image_inv file_exists fill_interlace fill_up fill_up_shape filter_kalman find_aniso_shape_model find_aniso_shape_models find_bar_code find_calib_descriptor_model find_calib_object find_caltab find_component_model find_data_code_2d find_deformable_surface_model find_local_deformable_model find_marks_and_pose find_ncc_model find_ncc_models find_neighbors find_planar_calib_deformable_model find_planar_uncalib_deformable_model find_rectification_grid find_scaled_shape_model find_scaled_shape_models find_shape_model find_shape_model_3d find_shape_models find_surface_model find_surface_model_image find_text find_uncalib_descriptor_model fit_circle_contour_xld fit_ellipse_contour_xld fit_line_contour_xld fit_primitives_object_model_3d fit_rectangle2_contour_xld fit_surface_first_order fit_surface_second_order fitting flush_buffer fnew_line fread_char fread_line fread_serialized_item fread_string frei_amp frei_dir full_domain funct_1d_to_pairs fuzzy_entropy fuzzy_measure_pairing fuzzy_measure_pairs fuzzy_measure_pos fuzzy_perimeter fwrite_serialized_item fwrite_string gamma_image gauss_distribution gauss_filter gauss_image gen_arbitrary_distortion_map gen_bandfilter gen_bandpass gen_binocular_proj_rectification gen_binocular_rectification_map gen_box_object_model_3d gen_bundle_adjusted_mosaic gen_caltab gen_checker_region gen_circle gen_circle_contour_xld gen_circle_sector gen_contour_nurbs_xld gen_contour_polygon_rounded_xld gen_contour_polygon_xld gen_contour_region_xld gen_contours_skeleton_xld gen_cooc_matrix gen_cross_contour_xld gen_cube_map_mosaic gen_cylinder_object_model_3d gen_derivative_filter gen_disc_se gen_ellipse gen_ellipse_contour_xld gen_ellipse_sector gen_empty_obj gen_empty_object_model_3d gen_empty_region gen_filter_mask gen_gabor gen_gauss_filter gen_gauss_pyramid gen_grid_rectification_map gen_grid_region gen_highpass gen_image1 gen_image1_extern gen_image1_rect gen_image3 gen_image3_extern gen_image_const gen_image_gray_ramp gen_image_interleaved gen_image_proto gen_image_surface_first_order gen_image_surface_second_order gen_image_to_world_plane_map gen_initial_components gen_lowpass gen_mean_filter gen_measure_arc gen_measure_rectangle2 gen_nurbs_interp gen_object_model_3d_from_points gen_parallel_contour_xld gen_parallels_xld gen_plane_object_model_3d gen_polygons_xld gen_principal_comp_trans gen_projective_mosaic gen_psf_defocus gen_psf_motion gen_radial_distortion_map gen_random_region gen_random_regions gen_rectangle1 gen_rectangle2 gen_rectangle2_contour_xld gen_region_contour_xld gen_region_histo gen_region_hline gen_region_line gen_region_points gen_region_polygon gen_region_polygon_filled gen_region_polygon_xld gen_region_runs gen_sin_bandpass gen_sphere_object_model_3d gen_sphere_object_model_3d_center gen_spherical_mosaic gen_std_bandpass gen_struct_elements generalized_eigenvalues_general_matrix generalized_eigenvalues_symmetric_matrix get_aop_info get_bar_code_object get_bar_code_param get_bar_code_param_specific get_bar_code_result get_bead_inspection_param get_bg_esti_params get_calib_data get_calib_data_observ_contours get_calib_data_observ_points get_calib_data_observ_pose get_camera_setup_param get_channel_info get_chapter_info get_check get_circle_pose get_class_box_param get_class_train_data_gmm get_class_train_data_knn get_class_train_data_mlp get_class_train_data_svm get_component_model_params get_component_model_tree get_component_relations get_comprise get_compute_device_info get_compute_device_param get_contour_angle_xld get_contour_attrib_xld get_contour_global_attrib_xld get_contour_xld get_current_dir get_data_code_2d_objects get_data_code_2d_param get_data_code_2d_results get_deformable_model_contours get_deformable_model_origin get_deformable_model_params get_deformable_surface_matching_result get_deformable_surface_model_param get_descriptor_model_origin get_descriptor_model_params get_descriptor_model_points get_descriptor_model_results get_diagonal_matrix get_disp_object_model_3d_info get_display_scene_3d_info get_distance_transform_xld_contour get_distance_transform_xld_param get_domain get_draw get_drawing_object_iconic get_drawing_object_params get_error_text get_extended_error_info get_features_ocr_class_knn get_features_ocr_class_mlp get_features_ocr_class_svm get_fix get_fixed_lut get_font get_font_extents get_found_component_model get_framegrabber_callback get_framegrabber_lut get_framegrabber_param get_full_matrix get_grayval get_grayval_contour_xld get_grayval_interpolated get_hsi get_icon get_image_pointer1 get_image_pointer1_rect get_image_pointer3 get_image_size get_image_time get_image_type get_insert get_io_channel_param get_io_device_param get_keywords get_line_approx get_line_of_sight get_line_style get_line_width get_lines_xld get_lut get_lut_style get_mbutton get_mbutton_sub_pix get_message_obj get_message_param get_message_queue_param get_message_tuple get_metrology_model_param get_metrology_object_fuzzy_param get_metrology_object_indices get_metrology_object_measures get_metrology_object_model_contour get_metrology_object_num_instances get_metrology_object_param get_metrology_object_result get_metrology_object_result_contour get_modules get_mposition get_mposition_sub_pix get_mshape get_ncc_model_origin get_ncc_model_params get_ncc_model_region get_next_socket_data_type get_obj_class get_object_model_3d_params get_operator_info get_operator_name get_os_window_handle get_paint get_pair_funct_1d get_parallels_xld get_param_info get_param_names get_param_num get_param_types get_params_class_gmm get_params_class_knn get_params_class_mlp get_params_class_svm get_params_ocr_class_cnn get_params_ocr_class_knn get_params_ocr_class_mlp get_params_ocr_class_svm get_part get_part_style get_pixel get_points_ellipse get_polygon_xld get_pose_type get_prep_info_class_gmm get_prep_info_class_mlp get_prep_info_class_svm get_prep_info_ocr_class_mlp get_prep_info_ocr_class_svm get_rectangle_pose get_region_chain get_region_contour get_region_convex get_region_index get_region_points get_region_polygon get_region_runs get_region_thickness get_regress_params_xld get_regularization_params_class_mlp get_regularization_params_ocr_class_mlp get_rejection_params_class_mlp get_rejection_params_ocr_class_mlp get_rgb get_rgba get_sample_class_gmm get_sample_class_knn get_sample_class_mlp get_sample_class_svm get_sample_class_train_data get_sample_identifier_object_info get_sample_identifier_param get_sample_num_class_gmm get_sample_num_class_knn get_sample_num_class_mlp get_sample_num_class_svm get_sample_num_class_train_data get_serial_param get_serialized_item_ptr get_shape get_shape_model_3d_contours get_shape_model_3d_params get_shape_model_contours get_shape_model_origin get_shape_model_params get_sheet_of_light_param get_sheet_of_light_result get_sheet_of_light_result_object_model_3d get_size_matrix get_socket_descriptor get_socket_param get_spy get_stereo_model_image_pairs get_stereo_model_object get_stereo_model_object_model_3d get_stereo_model_param get_string_extents get_sub_matrix get_support_vector_class_svm get_support_vector_num_class_svm get_support_vector_num_ocr_class_svm get_support_vector_ocr_class_svm get_surface_matching_result get_surface_model_param get_system get_system_time get_text_model_param get_text_object get_text_result get_texture_inspection_model_image get_texture_inspection_model_param get_texture_inspection_result_object get_threading_attrib get_thresh_images_variation_model get_tposition get_training_components get_tshape get_value_matrix get_variation_model get_window_attr get_window_background_image get_window_extents get_window_param get_window_pointer3 get_window_type get_y_value_funct_1d give_bg_esti gnuplot_close gnuplot_open_file gnuplot_open_pipe gnuplot_plot_ctrl gnuplot_plot_funct_1d gnuplot_plot_image golay_elements grab_data grab_data_async grab_image grab_image_async grab_image_start gray_bothat gray_closing gray_closing_rect gray_closing_shape gray_dilation gray_dilation_rect gray_dilation_shape gray_erosion gray_erosion_rect gray_erosion_shape gray_features gray_histo gray_histo_abs gray_histo_range gray_inside gray_opening gray_opening_rect gray_opening_shape gray_projections gray_range_rect gray_skeleton gray_tophat guided_filter hamming_change_region hamming_distance hamming_distance_norm hand_eye_calibration harmonic_interpolation highpass_image histo_2dim histo_to_thresh hit_or_miss hit_or_miss_golay hit_or_miss_seq hom_mat2d_compose hom_mat2d_determinant hom_mat2d_identity hom_mat2d_invert hom_mat2d_reflect hom_mat2d_reflect_local hom_mat2d_rotate hom_mat2d_rotate_local hom_mat2d_scale hom_mat2d_scale_local hom_mat2d_slant hom_mat2d_slant_local hom_mat2d_to_affine_par hom_mat2d_translate hom_mat2d_translate_local hom_mat2d_transpose hom_mat3d_compose hom_mat3d_determinant hom_mat3d_identity hom_mat3d_invert hom_mat3d_project hom_mat3d_rotate hom_mat3d_rotate_local hom_mat3d_scale hom_mat3d_scale_local hom_mat3d_to_pose hom_mat3d_translate hom_mat3d_translate_local hom_mat3d_transpose hom_vector_to_proj_hom_mat2d hough_circle_trans hough_circles hough_line_trans hough_line_trans_dir hough_lines hough_lines_dir hysteresis_threshold illuminate image_points_to_world_plane image_to_channels image_to_world_plane import import_lexicon info_edges info_framegrabber info_ocr_class_box info_parallels_xld info_smooth init_compute_device inner_circle inner_rectangle1 inpainting_aniso inpainting_ced inpainting_ct inpainting_mcf inpainting_texture inspect_clustered_components inspect_lexicon inspect_shape_model integer_to_obj integrate_funct_1d intensity interjacent interleave_channels interpolate_scattered_data interpolate_scattered_data_image interpolate_scattered_data_points_to_image intersect_lines_of_sight intersect_plane_object_model_3d intersection intersection_circle_contour_xld intersection_circles intersection_closed_contours_xld intersection_closed_polygons_xld intersection_contours_xld intersection_line_circle intersection_line_contour_xld intersection_lines intersection_ll intersection_segment_circle intersection_segment_contour_xld intersection_segment_line intersection_segments invert_funct_1d invert_image invert_matrix invert_matrix_mod isotropic_diffusion junctions_skeleton kirsch_amp kirsch_dir label_to_region laplace laplace_of_gauss learn_class_box learn_ndim_box learn_ndim_norm learn_sampset_box length_xld line_orientation line_position linear_trans_color lines_color lines_facet lines_gauss list_files local_max local_max_contours_xld local_max_sub_pix local_min local_min_max_funct_1d local_min_sub_pix local_threshold lock_mutex log_image lookup_lexicon lowlands lowlands_center lut_trans make_dir map_image match_essential_matrix_ransac match_funct_1d_trans match_fundamental_matrix_distortion_ransac match_fundamental_matrix_ransac match_rel_pose_ransac max_diameter_object_model_3d max_image max_matrix max_parallels_xld mean_curvature_flow mean_image mean_matrix mean_n mean_sp measure_pairs measure_pos measure_profile_sheet_of_light measure_projection measure_thresh median_image median_rect median_separate median_weighted merge_cont_line_scan_xld merge_regions_line_scan midrange_image min_image min_matrix min_max_gray minkowski_add1 minkowski_add2 minkowski_sub1 minkowski_sub2 mirror_image mirror_region mod_parallels_xld modify_component_relations moments_any_points_xld moments_any_xld moments_gray_plane moments_object_model_3d moments_points_xld moments_region_2nd moments_region_2nd_invar moments_region_2nd_rel_invar moments_region_3rd moments_region_3rd_invar moments_region_central moments_region_central_invar moments_xld monotony morph_hat morph_skeleton morph_skiz move_rectangle move_region mult_element_matrix mult_element_matrix_mod mult_image mult_matrix mult_matrix_mod negate_funct_1d new_extern_window new_line noise_distribution_mean nonmax_suppression_amp nonmax_suppression_dir norm_matrix num_points_funct_1d obj_diff obj_to_integer object_model_3d_to_xyz ocr_change_char ocr_get_features open_compute_device open_file open_framegrabber open_io_channel open_io_device open_serial open_socket_accept open_socket_connect open_textwindow open_window opening opening_circle opening_golay opening_rectangle1 opening_seg optical_flow_mg optimize_aop optimize_fft_speed optimize_rft_speed orientation_points_xld orientation_region orientation_xld orthogonal_decompose_matrix overpaint_gray overpaint_region paint_gray paint_region paint_xld partition_dynamic partition_lines partition_rectangle phase_correlation_fft phase_deg phase_rad photometric_stereo plane_deviation plateaus plateaus_center point_line_to_hom_mat2d points_foerstner points_harris points_harris_binomial points_lepetit points_sojka polar_trans_contour_xld polar_trans_contour_xld_inv polar_trans_image polar_trans_image_ext polar_trans_image_inv polar_trans_region polar_trans_region_inv pose_average pose_compose pose_invert pose_to_dual_quat pose_to_hom_mat3d pose_to_quat pouring pow_element_matrix pow_element_matrix_mod pow_image pow_matrix pow_matrix_mod pow_scalar_element_matrix pow_scalar_element_matrix_mod power_byte power_ln power_real prepare_direct_variation_model prepare_object_model_3d prepare_sample_identifier prepare_variation_model prewitt_amp prewitt_dir principal_comp proj_hom_mat2d_to_pose proj_match_points_distortion_ransac proj_match_points_distortion_ransac_guided proj_match_points_ransac proj_match_points_ransac_guided project_3d_point project_hom_point_hom_mat3d project_object_model_3d project_point_hom_mat3d project_shape_model_3d projection_pl projective_trans_contour_xld projective_trans_hom_point_3d projective_trans_image projective_trans_image_size projective_trans_object_model_3d projective_trans_pixel projective_trans_point_2d projective_trans_point_3d projective_trans_region protect_ocr_trainf pruning quat_compose quat_conjugate quat_interpolate quat_normalize quat_rotate_point_3d quat_to_hom_mat3d quat_to_pose query_all_colors query_aop_info query_available_compute_devices query_bar_code_params query_calib_data_observ_indices query_color query_colored query_contour_attribs_xld query_contour_global_attribs_xld query_data_code_2d_params query_font query_gray query_insert query_io_device query_io_interface query_line_width query_lut query_mshape query_operator_info query_paint query_param_info query_params_ocr_class_cnn query_shape query_sheet_of_light_params query_spy query_tshape query_window_type radial_distortion_self_calibration radiometric_self_calibration rank_image rank_n rank_rect rank_region read_aop_knowledge read_bar_code_model read_calib_data read_cam_par read_camera_setup_model read_char read_class_box read_class_gmm read_class_knn read_class_mlp read_class_svm read_class_train_data read_component_model read_contour_xld_arc_info read_contour_xld_dxf read_data_code_2d_model read_deformable_model read_deformable_surface_model read_descriptor_model read_distance_transform_xld read_fft_optimization_data read_funct_1d read_gray_se read_image read_io_channel read_kalman read_matrix read_measure read_metrology_model read_ncc_model read_object read_object_model_3d read_ocr read_ocr_class_cnn read_ocr_class_knn read_ocr_class_mlp read_ocr_class_svm read_ocr_trainf read_ocr_trainf_names read_ocr_trainf_names_protected read_ocr_trainf_select read_ocv read_polygon_xld_arc_info read_polygon_xld_dxf read_pose read_region read_sample_identifier read_samples_class_gmm read_samples_class_mlp read_samples_class_svm read_sampset read_sequence read_serial read_shape_model read_shape_model_3d read_sheet_of_light_model read_string read_surface_model read_template read_texture_inspection_model read_training_components read_tuple read_variation_model read_world_file real_to_complex real_to_vector_field receive_data receive_image receive_region receive_serialized_item receive_tuple receive_xld reconst3d_from_fundamental_matrix reconstruct_height_field_from_gradient reconstruct_points_stereo reconstruct_surface_stereo rectangle1_domain rectangularity reduce_class_svm reduce_domain reduce_object_model_3d_by_view reduce_ocr_class_svm refine_deformable_surface_model refine_surface_model_pose refine_surface_model_pose_image region_features region_to_bin region_to_label region_to_mean regiongrowing regiongrowing_mean regiongrowing_n register_object_model_3d_global register_object_model_3d_pair regress_contours_xld rel_pose_to_fundamental_matrix release_all_compute_devices release_compute_device remove_calib_data remove_calib_data_observ remove_dir remove_noise_region remove_sample_identifier_preparation_data remove_sample_identifier_training_data remove_scene_3d_camera remove_scene_3d_instance remove_scene_3d_label remove_scene_3d_light remove_texture_inspection_model_image render_object_model_3d render_scene_3d repeat_matrix reset_fuzzy_measure reset_metrology_object_fuzzy_param reset_metrology_object_param reset_obj_db reset_sheet_of_light_model rft_generic rgb1_to_gray rgb3_to_gray rigid_trans_object_model_3d roberts robinson_amp robinson_dir rotate_image roundness run_bg_esti runlength_distribution runlength_features saddle_points_sub_pix sample_funct_1d sample_object_model_3d scale_image scale_image_max scale_matrix scale_matrix_mod scale_y_funct_1d scene_flow_calib scene_flow_uncalib screw_to_dual_quat search_operator segment_characters segment_contour_attrib_xld segment_contours_xld segment_image_mser segment_object_model_3d select_characters select_contours_xld select_feature_set_gmm select_feature_set_knn select_feature_set_mlp select_feature_set_svm select_feature_set_trainf_knn select_feature_set_trainf_mlp select_feature_set_trainf_mlp_protected select_feature_set_trainf_svm select_feature_set_trainf_svm_protected select_gray select_grayvalues_from_channels select_lines select_lines_longest select_matching_lines select_obj select_object_model_3d select_points_object_model_3d select_region_point select_region_spatial select_shape select_shape_proto select_shape_std select_shape_xld select_sub_feature_class_train_data select_xld_point send_data send_image send_mouse_double_click_event send_mouse_down_event send_mouse_drag_event send_mouse_up_event send_region send_serialized_item send_tuple send_xld serialize_bar_code_model serialize_calib_data serialize_cam_par serialize_camera_setup_model serialize_class_box serialize_class_gmm serialize_class_knn serialize_class_mlp serialize_class_svm serialize_class_train_data serialize_component_model serialize_data_code_2d_model serialize_deformable_model serialize_deformable_surface_model serialize_descriptor_model serialize_distance_transform_xld serialize_dual_quat serialize_fft_optimization_data serialize_hom_mat2d serialize_hom_mat3d serialize_image serialize_matrix serialize_measure serialize_metrology_model serialize_ncc_model serialize_object serialize_object_model_3d serialize_ocr serialize_ocr_class_cnn serialize_ocr_class_knn serialize_ocr_class_mlp serialize_ocr_class_svm serialize_ocv serialize_pose serialize_quat serialize_region serialize_sample_identifier serialize_shape_model serialize_shape_model_3d serialize_sheet_of_light_model serialize_surface_model serialize_template serialize_texture_inspection_model serialize_training_components serialize_tuple serialize_variation_model serialize_xld set_aop_info set_bar_code_param set_bar_code_param_specific set_bead_inspection_param set_bg_esti_params set_calib_data set_calib_data_calib_object set_calib_data_cam_param set_calib_data_observ_points set_calib_data_observ_pose set_camera_setup_cam_param set_camera_setup_param set_check set_class_box_param set_color set_colored set_comprise set_compute_device_param set_content_update_callback set_current_dir set_data_code_2d_param set_deformable_model_origin set_deformable_model_param set_descriptor_model_origin set_diagonal_matrix set_distance_transform_xld_param set_draw set_drawing_object_callback set_drawing_object_params set_drawing_object_xld set_feature_lengths_class_train_data set_fix set_fixed_lut set_font set_framegrabber_callback set_framegrabber_lut set_framegrabber_param set_full_matrix set_fuzzy_measure set_fuzzy_measure_norm_pair set_gray set_grayval set_hsi set_icon set_insert set_io_channel_param set_io_device_param set_line_approx set_line_style set_line_width set_local_deformable_model_metric set_lut set_lut_style set_message_obj set_message_param set_message_queue_param set_message_tuple set_metrology_model_image_size set_metrology_model_param set_metrology_object_fuzzy_param set_metrology_object_param set_mshape set_ncc_model_origin set_ncc_model_param set_object_model_3d_attrib set_object_model_3d_attrib_mod set_offset_template set_origin_pose set_paint set_params_class_knn set_part set_part_style set_pixel set_planar_calib_deformable_model_metric set_planar_uncalib_deformable_model_metric set_profile_sheet_of_light set_reference_template set_regularization_params_class_mlp set_regularization_params_ocr_class_mlp set_rejection_params_class_mlp set_rejection_params_ocr_class_mlp set_rgb set_rgba set_sample_identifier_object_info set_sample_identifier_param set_scene_3d_camera_pose set_scene_3d_instance_param set_scene_3d_instance_pose set_scene_3d_label_param set_scene_3d_light_param set_scene_3d_param set_scene_3d_to_world_pose set_serial_param set_shape set_shape_model_metric set_shape_model_origin set_shape_model_param set_sheet_of_light_param set_socket_param set_spy set_stereo_model_image_pairs set_stereo_model_param set_sub_matrix set_surface_model_param set_system set_text_model_param set_texture_inspection_model_param set_tposition set_tshape set_value_matrix set_window_attr set_window_dc set_window_extents set_window_param set_window_type sfs_mod_lr sfs_orig_lr sfs_pentland shade_height_field shape_histo_all shape_histo_point shape_trans shape_trans_xld shock_filter sigma_image signal_condition signal_event sim_caltab simplify_object_model_3d simulate_defocus simulate_motion sin_image skeleton slide_image smallest_bounding_box_object_model_3d smallest_circle smallest_circle_xld smallest_rectangle1 smallest_rectangle1_xld smallest_rectangle2 smallest_rectangle2_xld smallest_sphere_object_model_3d smooth_contours_xld smooth_funct_1d_gauss smooth_funct_1d_mean smooth_image smooth_object_model_3d sobel_amp sobel_dir socket_accept_connect solve_matrix sort_contours_xld sort_region sp_distribution spatial_relation split_contours_xld split_skeleton_lines split_skeleton_region sqrt_image sqrt_matrix sqrt_matrix_mod stationary_camera_self_calibration sub_image sub_matrix sub_matrix_mod suggest_lexicon sum_matrix surface_normals_object_model_3d svd_matrix symm_difference symm_difference_closed_contours_xld symm_difference_closed_polygons_xld symmetry system_call tan_image test_closed_xld test_equal_obj test_equal_region test_region_point test_sampset_box test_self_intersection_xld test_subset_region test_xld_point testd_ocr_class_box text_line_orientation text_line_slant texture_laws thickening thickening_golay thickening_seq thinning thinning_golay thinning_seq threshold threshold_sub_pix tile_channels tile_images tile_images_offset timed_wait_condition top_hat topographic_sketch train_class_gmm train_class_knn train_class_mlp train_class_svm train_model_components train_sample_identifier train_texture_inspection_model train_variation_model traind_ocr_class_box traind_ocv_proj trainf_ocr_class_box trainf_ocr_class_knn trainf_ocr_class_mlp trainf_ocr_class_mlp_protected trainf_ocr_class_svm trainf_ocr_class_svm_protected trans_from_rgb trans_pose_shape_model_3d trans_to_rgb transform_funct_1d transform_metrology_object translate_measure transpose_matrix transpose_matrix_mod transpose_region triangulate_object_model_3d trimmed_mean try_lock_mutex try_wait_event tuple_abs tuple_acos tuple_add tuple_and tuple_asin tuple_atan tuple_atan2 tuple_band tuple_bnot tuple_bor tuple_bxor tuple_ceil tuple_chr tuple_chrt tuple_concat tuple_cos tuple_cosh tuple_cumul tuple_deg tuple_deviation tuple_difference tuple_div tuple_environment tuple_equal tuple_equal_elem tuple_exp tuple_fabs tuple_find tuple_find_first tuple_find_last tuple_first_n tuple_floor tuple_fmod tuple_gen_const tuple_gen_sequence tuple_greater tuple_greater_elem tuple_greater_equal tuple_greater_equal_elem tuple_histo_range tuple_insert tuple_int tuple_intersection tuple_inverse tuple_is_int tuple_is_int_elem tuple_is_mixed tuple_is_number tuple_is_real tuple_is_real_elem tuple_is_string tuple_is_string_elem tuple_last_n tuple_ldexp tuple_length tuple_less tuple_less_elem tuple_less_equal tuple_less_equal_elem tuple_log tuple_log10 tuple_lsh tuple_max tuple_max2 tuple_mean tuple_median tuple_min tuple_min2 tuple_mod tuple_mult tuple_neg tuple_not tuple_not_equal tuple_not_equal_elem tuple_number tuple_or tuple_ord tuple_ords tuple_pow tuple_rad tuple_rand tuple_real tuple_regexp_match tuple_regexp_replace tuple_regexp_select tuple_regexp_test tuple_remove tuple_replace tuple_round tuple_rsh tuple_select tuple_select_mask tuple_select_range tuple_select_rank tuple_sgn tuple_sin tuple_sinh tuple_sort tuple_sort_index tuple_split tuple_sqrt tuple_str_bit_select tuple_str_first_n tuple_str_last_n tuple_strchr tuple_string tuple_strlen tuple_strrchr tuple_strrstr tuple_strstr tuple_sub tuple_substr tuple_sum tuple_symmdiff tuple_tan tuple_tanh tuple_type tuple_type_elem tuple_union tuple_uniq tuple_xor union1 union2 union2_closed_contours_xld union2_closed_polygons_xld union_adjacent_contours_xld union_cocircular_contours_xld union_collinear_contours_ext_xld union_collinear_contours_xld union_cotangential_contours_xld union_object_model_3d union_straight_contours_histo_xld union_straight_contours_xld unlock_mutex unproject_coordinates unwarp_image_vector_field update_bg_esti update_kalman update_window_pose var_threshold vector_angle_to_rigid vector_field_length vector_field_to_hom_mat2d vector_field_to_real vector_to_aniso vector_to_essential_matrix vector_to_fundamental_matrix vector_to_fundamental_matrix_distortion vector_to_hom_mat2d vector_to_hom_mat3d vector_to_pose vector_to_proj_hom_mat2d vector_to_proj_hom_mat2d_distortion vector_to_rel_pose vector_to_rigid vector_to_similarity volume_object_model_3d_relative_to_plane wait_barrier wait_condition wait_event wait_seconds watersheds watersheds_threshold wiener_filter wiener_filter_ni write_aop_knowledge write_bar_code_model write_calib_data write_cam_par write_camera_setup_model write_class_box write_class_gmm write_class_knn write_class_mlp write_class_svm write_class_train_data write_component_model write_contour_xld_arc_info write_contour_xld_dxf write_data_code_2d_model write_deformable_model write_deformable_surface_model write_descriptor_model write_distance_transform_xld write_fft_optimization_data write_funct_1d write_image write_io_channel write_lut write_matrix write_measure write_metrology_model write_ncc_model write_object write_object_model_3d write_ocr write_ocr_class_knn write_ocr_class_mlp write_ocr_class_svm write_ocr_trainf write_ocr_trainf_image write_ocv write_polygon_xld_arc_info write_polygon_xld_dxf write_pose write_region write_sample_identifier write_samples_class_gmm write_samples_class_mlp write_samples_class_svm write_serial write_shape_model write_shape_model_3d write_sheet_of_light_model write_string write_surface_model write_template write_texture_inspection_model write_training_components write_tuple write_variation_model x_range_funct_1d xyz_to_object_model_3d y_range_funct_1d zero_crossing zero_crossing_sub_pix zero_crossings_funct_1d zoom_image_factor zoom_image_size zoom_region';
+	
+	  var reservedFunctions = 'H_MSG_FAIL H_MSG_FALSE H_MSG_TRUE H_MSG_VOID H_TYPE_ANY H_TYPE_INT H_TYPE_MIXED H_TYPE_REAL H_TYPE_STRING abs acos and asin atan atan2 band bnot bor bxor ceil chr chrt cos cosh cumul deg deviation environment exp fabs false find floor fmod gen_tuple_const int inverse is_int is_int_elem is_mixed is_number is_real is_real_elem is_string is_string_elem ldexp log log10 lsh max max2 mean median min min2 not or ord ords par_start pow rad rand real regexp_match regexp_replace regexp_select regexp_test remove replace round rsh select_mask select_rank sgn sin sinh sort sort_index split sqrt strchr strlen strrchr strrstr strstr subset sum tan tanh true type type_elem uniq xor';
+	
+	  var reservedControl = 'assign assign_at break case catch comment continue convert_tuple_to_vector_1d convert_vector_to_tuple default else elseif endfor endif endswitch endtry endwhile executable_expression exit export_def for global if ifelse import insert par_join repeat return stop switch throw try until while';
+	
+	  this.regexList = [{
+	    regex: regexLib.singleQuotedString,
+	    css: 'string'
+	  }, {
+	    regex: new RegExp(this.getKeywords(ops), 'gm'),
+	    css: 'color1'
+	  }, {
+	    regex: new RegExp(this.getKeywords(reservedFunctions), 'gm'),
+	    css: 'functions'
+	  }, {
+	    regex: new RegExp(this.getKeywords(reservedControl) + '|:=', 'gm'),
+	    css: 'keyword'
+	  }, {
+	    regex: new RegExp(/\*.*/, 'gm'),
+	    css: 'comments'
+	  }];
+	}
+	
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['halcon', 'hdevelop', 'hdev'];
+	module.exports = Brush;
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var BrushBase = __webpack_require__(22);
+	var regexLib = __webpack_require__(3).commonRegExp;
+	
+	function Brush() {
+	  var keywords = 'ABS ACOS ACTION ADD AND ANDN ANY ANY_BIT ANY_DATE ANY_INT ANY_NUM ANY_REAL ARRAY ASIN AT ATAN ' + 'BOOL BY BYTE ' + 'CAL CALC CALCN CASE CD CDT CLK CONCAT CONFIGURATION CONSTANT COS CTD CTU CTUD CU CV ' + 'D DATE DATE_AND_TIME DELETE DINT DIV DO DS DT DWORD ' + 'ELSE ELSIF END_ACTION END_CASE END_CONFIGURATION END_FOR END_FUNCTION END_FUNCTION_BLOCK END_IF END_PROGRAM END_REPEAT END_RESOURCE END_STEP END_STRUCT END_TRANSITION END_TYPE END_VAR END_WHILE EN ENO EQ ET EXIT EXP EXPT ' + 'FALSE F_EDGE F_TRIG FIND FOR FROM FUNCTION FUNCTION_BLOCK ' + 'GE GT' + 'IF IN INITIAL_STEP INSERT INT INTERVAL ' + 'JMP JMPC JMPCN ' + 'L LD LDN LE LEFT LEN LIMIT LINT LN LOG LREAL LT LWORD ' + 'MAX MID MIN MOD MOVE MUL MUX ' + 'N NE NEG NOT ' + 'OF ON OR OEN ' + 'P PRIORITY PROGRAM PT PV ' + 'Q Q1 QU QD ' + 'R R1 R_TRIG READ_ONLY READ_WRITE REAL RELEASE REPEAT REPLACE RESOURCE RET RETAIN RETC RTCN RETURN RIGHT ROL ROR RS RTC R_EDGE ' + 'S S1 SD SEL SEMA SHL SHR SIN SINGLE SINT SL SQRT SR ST STEP STN STRING STRUCT SUB ' + 'TAN TASK THEN TIME TIME_OF_DAY TO TOD TOF TON TP TRANSITION TRUE TYPE ' + 'UDINT UINT ULINT UNTIL USINT ' + 'VAR VAR_ACCESS VAR_EXTERNAL VAR_GLOBAL VAR_INPUT VAR_IN_OUT VAR_OUTPUT ' + 'WHILE WITH WORD ' + 'XOR XORN';
+	
+	  this.regexList = [{
+	    //time literal
+	    regex: /(T|t|TIME|time)(?=.*([hms]|[HMS]))#(\d+(h|H))?(\d+(m|M))?(\d+(s|s))?(\d+(ms|MS))?/g,
+	    css: 'color2'
+	  }, {
+	    // date and time literal
+	    regex: /(DT|dt|date_and_time|DATE_AND_TIME)#\d{4}-\d{2}-\d{2}-\d{2}:\d{2}:\d{2}\.\d{2}/g,
+	    css: 'color2'
+	  }, {
+	    // time of day literal
+	    regex: /(TOD|tod|time_of_day|TIME_OF_DAY)#\d+:\d+(:\d+)?((\.\d+)|(\.?))/g,
+	    css: 'color2'
+	  }, {
+	    //date literal
+	    regex: /(D|d|DATE|date)#\d{4}-\d{2}-\d{2}/g,
+	    css: 'color2'
+	  }, {
+	    //direct adressing
+	    regex: /%[A-Z]{1,2}\d+(\.\d+)*/g,
+	    css: 'color2'
+	  }, {
+	    //multiline comment (* *)
+	    regex: /\(\*[\s\S]*?\*\)/gm,
+	    css: 'comments'
+	  }, {
+	    //string literal 'myvalue'
+	    regex: regexLib.singleQuotedString,
+	    css: 'string'
+	  }, {
+	    //number integers, floating point with dot or exponential
+	    regex: /\b\d+([\.eE]\d+)?\b/g,
+	    css: 'value'
+	  }, {
+	    //keywords
+	    regex: new RegExp(this.getKeywords(keywords), 'gmi'),
+	    css: 'keyword'
+	  }];
+	};
+	
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['structuredtext', 'ST', 'IEC61131', 'st', 'iec61131'];
+	module.exports = Brush;
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var BrushBase = __webpack_require__(22);
+	var regexLib = __webpack_require__(3).commonRegExp;
+	
+	function Brush() {
+	  var keywords = 'abstract annotation as break by catch class companion const constructor continue' + ' crossinline data do dynamic else enum external false final finally for fun get if' + ' import in infix init inline inner interface internal is lateinit noinline null object' + ' open operator out override package private protected public reified return sealed' + ' set super tailrec this throw trait true try type val var vararg when where while' + ' String Array Unit Int';
+	
+	  this.regexList = [{
+	    // line comment
+	    regex: regexLib.singleLineCComments,
+	    css: 'comments'
+	  }, {
+	    // block comment
+	    regex: /\/\*([^\*][\s\S]*?)?\*\//gm,
+	    css: 'comments'
+	  }, {
+	    // javadoc
+	    regex: /\/\*(?!\*\/)\*[\s\S]*?\*\//gm,
+	    css: 'preprocessor'
+	  }, {
+	    regex: regexLib.doubleQuotedString,
+	    css: 'string'
+	  }, {
+	    regex: regexLib.singleQuotedString,
+	    css: 'string'
+	  }, {
+	    // numbers
+	    regex: /\b([\d]+(\.[\d]+)?f?|[\d]+l?|0x[a-f0-9]+)\b/gi,
+	    css: 'value'
+	  }, {
+	    // annotations
+	    regex: /\@(Target|Retention|Repeatable|MustBeDocumented|Test|Deprecated)/g,
+	    css: 'color2'
+	  }, {
+	    // User-site targets
+	    regex: /\@(file|property|field|get|set|receiver|param|setparam|delegate):/g,
+	    css: 'color2'
+	  }, {
+	    // @Inject annotation
+	    regex: /\@(Inject)\b/g,
+	    css: 'color3'
+	  }, {
+	    regex: new RegExp(this.getKeywords(keywords), 'gm'),
+	    css: 'keyword'
+	  }];
+	
+	  this.forHtmlScript({
+	    left: /(&lt;|<)%[@!=]?/g,
+	    right: /%(&gt;|>)/g
+	  });
+	};
+	
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['kotlin'];
+	module.exports = Brush;
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	/**
+	 * SyntaxHighlighter LaTeX Brush by DiGMi
+	 * http://digmi.org
+	 *
+	 * Used for SyntaxHighlighter which can be found at:
+	 * http://alexgorbatchev.com/SyntaxHighlighter
+	 *
+	 * @version
+	 * 1.0.0 (July 21 2012)
+	 * 
+	 * @copyright
+	 * Copyright (C) 2012 Or Dagmi.
+	 *               2016 Erik Wegner
+	 */
+	var BrushBase = __webpack_require__(22);
+	
+	function Brush() {
+	  var keywords = 'if fi then elif else for do done until while break continue case function return in eq ne gt lt ge le';
+	  var specials = 'include usepackage begin end ref label includegraphics';
+	
+	  this.regexList = [{ regex: /%.*$/gm,
+	    css: 'comments' }, { regex: /\$[\s\S]*?\$/gm,
+	    css: 'string' }, { regex: /\\\w+/gm, // Command
+	    css: 'keyword' }, { regex: /\{.*}/gm, // Parameter
+	    css: 'color2' }, { regex: /\[.*]/gm, // Optional Parameter
+	    css: 'color3' }, { regex: new RegExp(this.getKeywords(specials), 'gm'), css: 'color3' }, { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' }];
+	};
+	
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['latex'];
+	module.exports = Brush;
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var BrushBase = __webpack_require__(22);
+	var regexLib = __webpack_require__(3).commonRegExp;
+	function Brush() {
+	    var functions = 'subst patsubst strip findstring filter filter-out sort dir notdir suffix basename addsuffix addprefix join word wordlist words firstword wildcard foreach origin shell';
+	    var constants = 'PHONY SUFFIXES DEFAULT PRECIOUS INTERMEDIATE SECONDARY IGNORE SILENT EXPORT_ALL_VARIABLES';
+	    this.regexList = [{ regex: regexLib.singleLinePerlComments, css: 'comments' }, // one line comments
+	    { regex: regexLib.doubleQuotedString, css: 'string' }, // double quoted strings
+	    { regex: regexLib.singleQuotedString, css: 'string' }, // single quoted strings
+	    { regex: /\$\([^\@%<\?\^\+\*]\w+\)/gm, css: 'variable' }, // 変数
+	    { regex: /((\$\(?[\@%<\?\^\+\*](D\)|F\))*)|%|\$&lt;)/gm, css: 'keyword' }, // 自動変数
+	    { regex: new RegExp(this.getKeywords(functions), 'gm'), css: 'functions' }, // テキスト変形関数
+	    { regex: new RegExp(this.getKeywords(constants), 'gm'), css: 'constants' // ビルトインターゲット名  
+	    }];
+	}
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['Makefile'];
+	module.exports = Brush;
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var BrushBase = __webpack_require__(22);
+	var regexLib = __webpack_require__(3).commonRegExp;
+	
+	function Brush() {
+		var keywords = 'alias break case catch catchQuiet continue default do else false float for global if in int matrix proc return source string switch true vector while';
+		var functions = 'aaf2fcp about abs addAttr addDynamic addExtension addMetadata addPP affectedNet affects aimConstraint air aliasAttr align alignCtx alignCurve alignSurface allNodeTypes ambientLight angle angleBetween animCurveEditor animDisplay animLayer animView annotate applyAttrPattern applyMetadata applyTake arclen arcLenDimContext arcLengthDimension arrayMapper art3dPaintCtx artAttrCtx artAttrPaintVertexCtx artAttrSkinPaintCtx artAttrTool artBuildPaintMenu artFluidAttrCtx artPuttyCtx artSelectCtx artSetPaintCtx artUserPaintCtx assembly assignCommand assignInputDevice assignViewportFactories attachCurve attachDeviceAttr attachSurface attrColorSliderGrp attrCompatibility attrControlGrp attrEnumOptionMenu attrEnumOptionMenuGrp attrFieldGrp attrFieldSliderGrp attributeInfo attributeMenu attributeName attributeQuery attrNavigationControlGrp audioTrack autoKeyframe autoPlace autoSave bakeClip bakePartialHistory bakeResults bakeSimulation baseTemplate baseView batchRender bevel bevelPlus bezierAnchorPreset bezierAnchorState bezierCurveToNurbs bezierInfo bindSkin binMembership blend2 blendShape blendShapeEditor blendShapePanel blendTwoAttr blindDataType boneLattice boundary boxDollyCtx boxZoomCtx bufferCurve buildBookmarkMenu buildKeyframeMenu button buttonManip cacheFile cacheFileCombine cacheFileMerge cacheFileTrack callbacks camera cameraSet cameraView canCreateCaddyManip canCreateManip canvas ceil changeSubdivComponentDisplayLevel changeSubdivRegion channelBox character characterize characterMap chdir checkBox checkBoxGrp checkDefaultRenderGlobals choice circle circularFillet clamp clear clearCache clip clipEditor clipEditorCurrentTimeCtx clipMatching clipSchedule clipSchedulerOutliner closeCurve closeSurface cluster cmdFileOutput cmdScrollFieldExecuter cmdScrollFieldReporter cmdShell coarsenSubdivSelectionList collision color colorAtPoint colorEditor colorIndex colorIndexSliderGrp colorInputWidgetGrp colorManagementCatalog colorManagementFileRules colorManagementPrefs colorSliderButtonGrp colorSliderGrp columnLayout commandEcho commandLine commandLogging commandPort componentBox componentEditor condition cone confirmDialog connectAttr connectControl connectDynamic connectionInfo connectJoint constrain constrainValue constructionHistory container containerBind containerProxy containerPublish containerTemplate containerView contextInfo control convertIffToPsd convertSolidTx convertTessellation convertUnit copyAttr copyDeformerWeights copyFlexor copyKey copySkinWeights cos createAttrPatterns createDisplayLayer createEditor createLayeredPsdFile createNode createRenderLayer createSubdivRegion cross ctxAbort ctxCompletion ctxEditMode ctxTraverse currentCtx currentTime currentTimeCtx currentUnit curve curveAddPtCtx curveCVCtx curveEditorCtx curveEPCtx curveIntersect curveMoveEPCtx curveOnSurface curveRGBColor curveSketchCtx cutKey cycleCheck cylinder dagObjectCompare dagPose dataStructure date dbcount dbmessage dbpeek dbtrace defaultLightListCheckBox defaultNavigation defineDataServer defineVirtualDevice deformer deformerWeights deg_to_rad delete deleteAttr deleteAttrPattern deleteExtension deleteUI delrandstr deltaMush detachCurve detachDeviceAttr detachSurface deviceEditor deviceManager devicePanel dgdirty dgeval dgfilter dgInfo dgmodified dgtimer dimWhen directionalLight directKeyCtx dirmap disable disableIncorrectNameWarning disconnectAttr disconnectJoint diskCache displacementToPoly displayAffected displayColor displayCull displayLevelOfDetail displayPref displayRGBColor displaySmoothness displayStats displayString displaySurface distanceDimContext distanceDimension doBlur dockControl dolly dollyCtx dopeSheetEditor dot doubleProfileBirailSurface drag dragAttrContext draggerContext dropoffLocator duplicate duplicateCurve duplicateSurface dynamicLoad dynCache dynControl dynExport dynExpression dynGlobals dynPaintEditor dynParticleCtx dynPref editDisplayLayerGlobals editDisplayLayerMembers editMetadata editor editorTemplate editRenderLayerAdjustment editRenderLayerGlobals editRenderLayerMembers effector emit emitter enableDevice encodeString env erf error eval evalDeferred evalEcho evalNoSelectNotify evaluationManager evaluator event exactWorldBoundingBox exclusiveLightCheckBox exec exists exp exportEdits expression expressionEditorListen extendCurve extendSurface extrude falloffCurve fcheck fclose feof fflush fgetline fgetword file fileBrowserDialog fileDialog fileDialog2 fileInfo filePathEditor filetest filletCurve filter filterCurve filterExpand filterStudioImport findKeyframe findType fitBspline flexor floatField floatFieldGrp floatScrollBar floatSlider floatSlider2 floatSliderButtonGrp floatSliderGrp floor flow flowLayout fluidCacheInfo fluidEmitter fluidVoxelInfo flushUndo fmod fontDialog fopen format formLayout fprint frameBufferName frameLayout fread freadAllLines freadAllText freeFormFillet frewind fwrite fwriteAllLines fwriteAllText gamma gauss geomBind geometryConstraint geomToBBox getAttr getClassification getDefaultBrush getenv getFileList getFluidAttr getInputDeviceRange getLastError getMetadata getModifiers getModulePath getPanel getParticleAttr getpid getProcArguments getRenderDependencies getRenderTasks globalStitch glRender glRenderEditor gmatch goal grabColor gradientControl gradientControlNoAttr graphDollyCtx graphSelectContext graphTrackCtx gravity greasePencilCtx grid gridLayout group hardenPointCurve hardware hardwareRenderPanel hasMetadata headsUpDisplay headsUpMessage help helpLine hermite hide hikGlobals hilite hitTest hotBox hotkey hotkeyCheck hotkeyCtx hotkeyEditorPanel hotkeySet hsv_to_rgb hudButton hudSlider hudSliderButton hwReflectionMap hwRender hwRenderLoad hyperGraph hyperPanel hyperShade hypot iconTextButton iconTextCheckBox iconTextRadioButton iconTextRadioCollection iconTextScrollList iconTextStaticLabel ikfkDisplayMethod ikHandle ikHandleCtx ikHandleDisplayScale ikSolver ikSplineHandleCtx ikSystem ikSystemInfo illustratorCurves image imagePlane imfPlugins inheritTransform insertJoint insertJointCtx insertKeyCtx insertKnotCurve insertKnotSurface instance instanceable instancer internalVar intersect intField intFieldGrp intScrollBar intSlider intSliderGrp inViewEditor inViewMessage iprEngine isConnected isDirty isolateSelect isTrue itemFilter itemFilterAttr itemFilterType joint jointCluster jointCtx jointDisplayScale jointLattice keyframe keyframeOutliner keyframeRegionCurrentTimeCtx keyframeRegionDirectKeyCtx keyframeRegionDollyCtx keyframeRegionInsertKeyCtx keyframeRegionMoveKeyCtx keyframeRegionScaleKeyCtx keyframeRegionSelectKeyCtx keyframeRegionSetKeyCtx keyframeRegionTrackCtx keyframeStats keyingGroup keyTangent lassoContext lattice latticeDeformKeyCtx launch launchImageEditor layerButton layeredShaderPort layeredTexturePort layout layoutDialog license lightlink lightList linearPrecision linstep listAnimatable listAttr listAttrPatterns listCameras listConnections listDeviceAttachments listHistory listInputDeviceAxes listInputDeviceButtons listInputDevices listNodesWithIncorrectNames listNodeTypes listRelatives listSets loadFluid loadModule loadPlugin loadPrefObjects loadUI lockNode loft log lookThru ls lsThroughFilter lsUI mag makebot makeIdentity makeLive makePaintable makeSingleSurface manipMoveContext manipMoveLimitsCtx manipOptions manipPivot manipRotateContext manipRotateLimitsCtx manipScaleContext manipScaleLimitsCtx marker match max maxfloat maxint mayaDpiSetting melInfo melOptions memory menu menuBarLayout menuEditor menuItem menuSet menuSetPref messageLine min minfloat minimizeApp minint mirrorJoint modelCurrentTimeCtx modelEditor modelPanel moduleInfo mouse move moveKeyCtx moveVertexAlongDirection movieInfo movIn movOut multiProfileBirailSurface multiTouch mute nameCommand nameField namespace namespaceInfo nBase newton nodeCast nodeEditor nodeIconButton nodeOutliner nodePreset nodeTreeLister nodeType noise nonLinear normalConstraint nParticle nSoft nurbsBoolean nurbsCopyUVSet nurbsCube nurbsCurveToBezier nurbsEditUV nurbsPlane nurbsSelect nurbsSquare nurbsToPoly nurbsToPolygonsPref nurbsToSubdiv nurbsToSubdivPref nurbsUVSet objectCenter objectType objectTypeUI objExists offsetCurve offsetCurveOnSurface offsetSurface ogs ogsRender openGLExtension openMayaPref optionMenu optionMenuGrp optionVar orbit orbitCtx orientConstraint outlinerEditor outlinerPanel overrideModifier paintEffectsDisplay pairBlend palettePort panel paneLayout panelConfiguration panelHistory panZoom panZoomCtx paramDimContext paramDimension paramLocator parent parentConstraint particle particleExists particleFill particleInstancer particleRenderInfo partition pasteKey pathAnimation pause pclose perCameraVisibility percent performanceOptions pfxstrokes pickWalk picture pixelMove planarSrf plane play playbackOptions playblast pluginDisplayFilter pluginInfo pointConstraint pointCurveConstraint pointLight pointOnCurve pointOnPolyConstraint pointOnSurface pointPosition poleVectorConstraint polyAppend polyAppendFacetCtx polyAppendVertex polyAutoProjection polyAverageNormal polyAverageVertex polyBevel polyBevel3 polyBlendColor polyBlindData polyBoolOp polyBridgeEdge polyCacheMonitor polyCBoolOp polyCheck polyChipOff polyClipboard polyCloseBorder polyCollapseEdge polyCollapseFacet polyColorBlindData polyColorDel polyColorMod polyColorPerVertex polyColorSet polyCompare polyCone polyConnectComponents polyContourProjection polyCopyUV polyCrease polyCreaseCtx polyCreateFacet polyCreateFacetCtx polyCube polyCut polyCutCtx polyCylinder polyCylindricalProjection polyDelEdge polyDelFacet polyDelVertex polyDuplicateAndConnect polyDuplicateEdge polyEditEdgeFlow polyEditUV polyEditUVShell polyEvaluate polyExtrudeEdge polyExtrudeFacet polyExtrudeVertex polyFlipEdge polyFlipUV polyForceUV polyGeoSampler polyHelix polyHole polyInfo polyInstallAction polyLayoutUV polyListComponentConversion polyMapCut polyMapDel polyMapSew polyMapSewMove polyMergeEdge polyMergeEdgeCtx polyMergeFacet polyMergeFacetCtx polyMergeUV polyMergeVertex polyMirrorFace polyMoveEdge polyMoveFacet polyMoveFacetUV polyMoveUV polyMoveVertex polyMultiLayoutUV polyNormal polyNormalizeUV polyNormalPerVertex polyOptions polyOptUvs polyOutput polyPinUV polyPipe polyPlanarProjection polyPlane polyPlatonicSolid polyPoke polyPrimitive polyPrism polyProjectCurve polyProjection polyPyramid polyQuad polyQueryBlindData polyReduce polyRemesh polySelect polySelectConstraint polySelectConstraintMonitor polySelectCtx polySelectEditCtx polySeparate polySetToFaceNormal polySewEdge polyShortestPathCtx polySlideEdge polySmooth polySoftEdge polySphere polySphericalProjection polySplit polySplitCtx polySplitCtx2 polySplitEdge polySplitRing polySplitVertex polyStraightenUVBorder polySubdivideEdge polySubdivideFacet polyTorus polyToSubdiv polyTransfer polyTriangulate polyUnite polyUniteSkinned polyUVRectangle polyUVSet polyWedgeFace popen popupMenu pose pow preloadRefEd prepareRender print profiler profilerTool progressBar progressWindow projectCurve projectionContext projectionManip projectTangent promptDialog propModCtx propMove psdChannelOutliner psdEditTextureFile psdExport psdTextureFile putenv pwd python querySubdiv quit rad_to_deg radial radioButton radioButtonGrp radioCollection radioMenuItemCollection rampColorPort rand randstate rangeControl readTake rebuildCurve rebuildSurface recordAttr recordDevice redo reference referenceEdit referenceQuery refineSubdivSelectionList refresh refreshEditorTemplates regionSelectKeyCtx rehash relationship reloadImage removeJoint removeMultiInstance rename renameAttr renameUI render renderer renderGlobalsNode renderInfo renderLayerPostProcess renderManip renderPartition renderPassRegistry renderQualityNode renderSettings renderThumbnailUpdate renderWindowEditor renderWindowSelectContext reorder reorderContainer reorderDeformers requires reroot resampleFluid resetTool resolutionNode resourceManager retimeKeyCtx reverseCurve reverseSurface revolve rgb_to_hsv rigidBody rigidSolver roll rollCtx rot rotate rotationInterpolation roundConstantRadius rowColumnLayout rowLayout runTimeCommand runup sampleImage saveAllShelves saveFluid saveImage saveInitialState saveMenu savePrefObjects savePrefs saveShelf saveToolSettings saveViewportSettings scale scaleComponents scaleConstraint scaleKey scaleKeyCtx sceneEditor sceneUIReplacement scmh scriptCtx scriptEditorInfo scriptedPanel scriptedPanelType scriptJob scriptNode scriptTable scrollField scrollLayout sculpt sculptMeshCacheCtx sculptTarget seed select selectContext selectedNodes selectionConnection selectKey selectKeyCtx selectKeyframeRegionCtx selectMode selectPref selectPriority selectType selLoadSettings separator sequenceManager setAttr setAttrMapping setDefaultShadingGroup setDrivenKeyframe setDynamic setEditCtx setFluidAttr setFocus setInfinity setInputDeviceMapping setKeyCtx setKeyframe setKeyframeBlendshapeTargetWts setKeyPath setMenuMode setNodeTypeFlag setParent setParticleAttr setRenderPassType sets setStartupMessage setToolTo setUITemplate setXformManip shadingConnection shadingGeometryRelCtx shadingLightRelCtx shadingNetworkCompare shadingNode shapeCompare shelfButton shelfLayout shelfTabLayout shot shotRipple shotTrack showHelp showHidden showManipCtx showMetadata showSelectionInTitle showShadingGroupAttrEditor showWindow sign simplify sin singleProfileBirailSurface size sizeBytes skinBindCtx skinCluster skinPercent smoothCurve smoothstep smoothTangentSurface snapKey snapMode snapshot snapshotBeadCtx snapshotModifyKeyCtx snapTogetherCtx soft softMod softModCtx softSelect soloMaterial sort sortCaseInsensitive sound soundControl spaceLocator sphere sphrand spotLight spotLightPreviewPort spreadSheetEditor spring sqrt squareSurface srtContext stackTrace stereoCameraView stereoRigManager stitchSurface stitchSurfacePoints strcmp stringArrayIntersector stringArrayRemove stroke subdAutoProjection subdCleanTopology subdCollapse subdDuplicateAndConnect subdEditUV subdiv subdivCrease subdivDisplaySmoothness subdLayoutUV subdListComponentConversion subdMapCut subdMapSewMove subdMatchTopology subdMirror subdPlanarProjection subdToBlind subdToPoly subdTransferUVsToCache substitute substituteGeometry substring suitePrefs surface surfaceSampler surfaceShaderList swatchDisplayPort swatchRefresh switchTable symbolButton symbolCheckBox symmetricModelling sysFile system tabLayout tan tangentConstraint targetWeldCtx texCutContext texLatticeDeformContext texManipContext texMoveContext texMoveUVShellContext texRotateContext texScaleContext texSculptCacheContext texSelectContext texSelectShortestPathCtx texSmudgeUVContext text textCurves textField textFieldButtonGrp textFieldGrp textManip textScrollList textureDeformer texturePlacementContext textureWindow texTweakUVContext texWinToolCtx threadCount threePointArcCtx timeCode timeControl timePort timer timerX timeWarp toggle toggleAxis toggleWindowVisibility tokenize tolerance tolower toolBar toolButton toolCollection toolDropped toolHasOptions toolPropertyWindow torus toupper trace track trackCtx transferAttributes transferShadingSets transformCompare transformLimits translator treeLister treeView trim trunc truncateFluidCache truncateHairCache tumble tumbleCtx turbulence twoPointArcCtx ubercam uiTemplate unassignInputDevice undo undoInfo unfold ungroup uniform unit unknownNode unknownPlugin unloadPlugin untangleUV untrim upAxis userCtx uvLink uvSnapshot vectorize view2dToolCtx viewCamera viewClipPlane viewFit viewHeadOn viewLookAt viewManip viewPlace viewSet visor vnn vnnCompound vnnConnect volumeAxis volumeBind vortex waitCursor walkCtx warning webBrowser webBrowserPrefs webView whatIs whatsNewHighlight window windowPref wire wireContext workspace wrinkle wrinkleContext writeTake xform xformConstraint xpmPicker';
+		this.regexList = [{ regex: regexLib.singleLineCComments, css: 'comments' }, { regex: regexLib.multiLineCComments, css: 'color1' }, { regex: regexLib.doubleQuotedString, css: 'string' }, { regex: new RegExp(this.getKeywords(functions), 'gm'), css: 'functions italic' }, { regex: new RegExp(this.getKeywords(keywords), 'gm'), css: 'keyword' }];
+	};
+	
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['mel'];
+	module.exports = Brush;
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var BrushBase = __webpack_require__(22);
+	var regexLib = __webpack_require__(3).commonRegExp;
+	
+	function Brush() {
+		var datatypes = 'ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR ' + 'DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH ' + 'HCOLORSPACE HCONV HCONVLIST HCURSOR HDC HDDEDATA HDESK HDROP HDWP ' + 'HENHMETAFILE HFILE HFONT HGDIOBJ HGLOBAL HHOOK HICON HINSTANCE HKEY ' + 'HKL HLOCAL HMENU HMETAFILE HMODULE HMONITOR HPALETTE HPEN HRESULT ' + 'HRGN HRSRC HSZ HWINSTA HWND INT INT_PTR INT32 INT64 LANGID LCID LCTYPE ' + 'LGRPID LONG LONGLONG LONG_PTR LONG32 LONG64 LPARAM LPBOOL LPBYTE LPCOLORREF ' + 'LPCSTR LPCTSTR LPCVOID LPCWSTR LPDWORD LPHANDLE LPINT LPLONG LPSTR LPTSTR ' + 'LPVOID LPWORD LPWSTR LRESULT PBOOL PBOOLEAN PBYTE PCHAR PCSTR PCTSTR PCWSTR ' + 'PDWORDLONG PDWORD_PTR PDWORD32 PDWORD64 PFLOAT PHALF_PTR PHANDLE PHKEY PINT ' + 'PINT_PTR PINT32 PINT64 PLCID PLONG PLONGLONG PLONG_PTR PLONG32 PLONG64 POINTER_32 ' + 'POINTER_64 PSHORT PSIZE_T PSSIZE_T PSTR PTBYTE PTCHAR PTSTR PUCHAR PUHALF_PTR ' + 'PUINT PUINT_PTR PUINT32 PUINT64 PULONG PULONGLONG PULONG_PTR PULONG32 PULONG64 ' + 'PUSHORT PVOID PWCHAR PWORD PWSTR SC_HANDLE SC_LOCK SERVICE_STATUS_HANDLE SHORT ' + 'SIZE_T SSIZE_T TBYTE TCHAR UCHAR UHALF_PTR UINT UINT_PTR UINT32 UINT64 ULONG ' + 'ULONGLONG ULONG_PTR ULONG32 ULONG64 USHORT USN VOID WCHAR WORD WPARAM WPARAM WPARAM ' + 'char bool short int __int32 __int64 __int8 __int16 long float double __wchar_t ' + 'clock_t _complex _dev_t _diskfree_t div_t ldiv_t _exception _EXCEPTION_POINTERS ' + 'FILE _finddata_t _finddatai64_t _wfinddata_t _wfinddatai64_t __finddata64_t ' + '__wfinddata64_t _FPIEEE_RECORD fpos_t _HEAPINFO _HFILE lconv intptr_t id ' + 'jmp_buf mbstate_t _off_t _onexit_t _PNH ptrdiff_t _purecall_handler ' + 'sig_atomic_t size_t _stat __stat64 _stati64 terminate_function ' + 'time_t __time64_t _timeb __timeb64 tm uintptr_t _utimbuf ' + 'va_list wchar_t wctrans_t wctype_t wint_t signed';
+	
+		var keywords = 'break case catch class copy const __finally __exception __try ' + 'const_cast continue private public protected __declspec ' + 'default delete deprecated dllexport dllimport do dynamic_cast ' + 'else enum explicit extern if for friend getter goto inline ' + 'mutable naked namespace new nil NO noinline nonatomic noreturn nothrow NULL ' + 'readonly readwrite register reinterpret_cast retain return SEL selectany self ' + 'setter sizeof static static_cast struct super switch template this ' + 'thread throw true false try typedef typeid typename union ' + 'using uuid virtual void volatile whcar_t while YES';
+	
+		var functions = 'assert isalnum isalpha iscntrl isdigit isgraph islower isprint' + 'ispunct isspace isupper isxdigit tolower toupper errno localeconv ' + 'setlocale acos asin atan atan2 ceil cos cosh exp fabs floor fmod ' + 'frexp ldexp log log10 modf pow sin sinh sqrt tan tanh jmp_buf ' + 'longjmp setjmp raise signal sig_atomic_t va_arg va_end va_start ' + 'clearerr fclose feof ferror fflush fgetc fgetpos fgets fopen ' + 'fprintf fputc fputs fread freopen fscanf fseek fsetpos ftell ' + 'fwrite getc getchar gets perror printf putc putchar puts remove ' + 'rename rewind scanf setbuf setvbuf sprintf sscanf tmpfile tmpnam ' + 'ungetc vfprintf vprintf vsprintf abort abs atexit atof atoi atol ' + 'bsearch calloc div exit free getenv labs ldiv malloc mblen mbstowcs ' + 'mbtowc qsort rand realloc srand strtod strtol strtoul system ' + 'wcstombs wctomb memchr memcmp memcpy memmove memset strcat strchr ' + 'strcmp strcoll strcpy strcspn strerror strlen strncat strncmp ' + 'strncpy strpbrk strrchr strspn strstr strtok strxfrm asctime ' + 'clock ctime difftime gmtime localtime mktime strftime time';
+	
+		this.regexList = [{
+			regex: regexLib.singleLineCComments,
+			css: 'comments'
+		}, {
+			regex: regexLib.multiLineCComments,
+			css: 'comments'
+		}, {
+			regex: regexLib.doubleQuotedString,
+			css: 'string'
+		}, {
+			regex: regexLib.singleQuotedString,
+			css: 'string'
+		}, {
+			regex: /^ *#.*/gm,
+			css: 'preprocessor'
+		}, {
+			regex: /^#!.*$/gm,
+			css: 'preprocessor'
+		}, {
+			regex: new RegExp(this.getKeywords(datatypes), 'gm'),
+			css: 'keyword bold'
+		}, {
+			regex: new RegExp(this.getKeywords(functions), 'gm'),
+			css: 'functions bold'
+		}, {
+			regex: new RegExp(this.getKeywords(keywords), 'gm'),
+			css: 'keyword bold'
+		}, {
+			regex: new RegExp('\\bNS\\w+\\b', 'gm'),
+			css: 'keyword bold'
+		}, {
+			regex: new RegExp('\\bUI\\w+\\b', 'gm'),
+			css: 'keyword bold'
+		}, {
+			regex: new RegExp('\\bIB\\w+\\b', 'gm'),
+			css: 'keyword bold'
+		}, {
+			regex: new RegExp('@\\w+\\b', 'gm'),
+			css: 'keyword bold'
+		}];
+	}
+	
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['objective-c', 'obj-c', 'objc', 'oc'];
+	module.exports = Brush;
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	/**
+	 * Yaml Brush for SyntaxHighlighter
+	 *
+	 * ppepin@rentpath.com
+	 * erik.wegner@ewus.de
+	 *
+	 */
+	var BrushBase = __webpack_require__(22);
+	
+	function Brush() {
+	  // Yaml Brush
+	
+	  var constants = '~ true false on off';
+	
+	  var regexLib = __webpack_require__(3).commonRegExp;
+	
+	  this.regexList = [{ regex: regexLib.singleLinePerlComments, css: 'comments' }, // comment
+	  { regex: regexLib.doubleQuotedString, css: 'string' }, // double quoted string
+	  { regex: regexLib.singleQuotedString, css: 'string' }, // single quoted string
+	  { regex: /^\s*([a-z0-9\._-])+\s*:/gmi, css: 'variable' }, // key
+	  { regex: /\s?(\.)([a-z0-9\._-])+\s?:/gmi, css: 'comments' }, // section
+	  { regex: /\s(@|:)([a-z0-9\._-])+\s*$/gmi, css: 'variable bold' }, // variable, reference
+	  { regex: /\s+\d+\s?$/gm, css: 'color2 bold' }, // integers
+	  { regex: /(\{|\}|\[|\]|,|~|:)/gm, css: 'constants' }, // inline hash and array, comma, null
+	  { regex: /^\s+(-)+/gm, css: 'string bold' }, // array list entry
+	  { regex: /^---/gm, css: 'string bold' }, // category
+	  { regex: new RegExp(this.getKeywords(constants), 'gmi'), css: 'constants' // constants
+	  }];
+	
+	  this.forHtmlScript(regexLib.phpScriptTags);
+	}
+	
+	Brush.prototype = new BrushBase();
+	Brush.aliases = ['yaml', 'yml'];
+	module.exports = Brush;
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
 	/*!
 	  * domready (c) Dustin Diaz 2014 - License MIT
@@ -5302,9 +5719,9 @@
 	  };
 	});
 
-/***/ },
-/* 53 */
-/***/ function(module, exports) {
+/***/ }),
+/* 61 */
+/***/ (function(module, exports) {
 
 	'use strict';
 	
@@ -5327,9 +5744,9 @@
 	  return result;
 	};
 
-/***/ },
-/* 54 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
@@ -5346,6 +5763,6 @@
 	  window.XRegExp = __webpack_require__(3).XRegExp;
 	}
 
-/***/ }
+/***/ })
 /******/ ]);
 //# sourceMappingURL=syntaxhighlighter.js.map

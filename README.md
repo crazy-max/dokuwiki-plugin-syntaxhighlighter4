@@ -34,7 +34,7 @@ If you install this plugin manually, make sure it is installed in `lib/plugins/s
 ### Brush
 
 The brush (language) that SyntaxHighlighter should use. Defaults to "text" if none is provided.<br />
-See [SyntaxHighlighter Brushes page](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes) for a complete list of available brushes.
+See the section [brushes and themes](#list-of-brushes-and-themes) for a complete list of available brushes.
 
 ### Options
 
@@ -131,13 +131,60 @@ Expected result:
 
 ![](resources/highlight-range.png)
 
-## Issues and Features
+### List of brushes and themes
 
-* https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/issues
-
-## Changelog
-
-See `CHANGELOG.md`.
+* **[Official brushes](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes)**
+  * applescript
+  * as3
+  * base
+  * bash
+  * coldfusion
+  * cpp
+  * csharp
+  * css
+  * delphi
+  * diff
+  * erlang
+  * groovy
+  * haxe
+  * java
+  * javafx
+  * javascript
+  * perl
+  * php
+  * plain
+  * powershell
+  * python
+  * ruby
+  * sass
+  * scala
+  * sql
+  * swift
+  * tap
+  * typescript
+  * vb
+  * xml
+* **Custom brushes**
+  * halcon
+  * IEC61131
+  * kotlin
+  * latex
+  * Makefile
+  * mel
+  * objective-c
+  * yaml
+* **[Official themes](https://github.com/syntaxhighlighter/syntaxhighlighter/wiki/Brushes-and-Themes)**
+  * default
+  * django
+  * eclipse
+  * emacs
+  * fadetogrey
+  * mdultra
+  * midnight
+  * rdark
+  * swift
+* **Custom themes**
+  *
 
 ## How can i help ?
 
