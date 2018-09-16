@@ -1,5 +1,9 @@
 # Changelog
 
+## 2018/09/16
+
+* Fix underscores not showing on last line (Issue #23)
+
 ## 2018/03/01
 
 * Change option `override` with a list of tags (code, file) to override (Issue #16)
