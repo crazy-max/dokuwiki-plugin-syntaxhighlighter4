@@ -12,12 +12,7 @@
     box-shadow: none;
 }
 
-/* Remove vertical scrollbar (IE & Chrome) */
+/** Remove vertical scrollbar (IE & Chrome) */
 .syntaxhighlighter {
     overflow-y: hidden !important;
-}
-
-/* Fix underscores not showing ; https://github.com/syntaxhighlighter/syntaxhighlighter/issues/406*/
-.syntaxhighlighter table td.code .container {
-    padding-bottom: 2px !important;
 }
