@@ -4,7 +4,8 @@
   <a href="https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/releases"><img src="https://img.shields.io/github/release/crazy-max/dokuwiki-plugin-syntaxhighlighter4.svg?style=flat-square" alt="Github Release"></a>
   <a href="https://www.dokuwiki.org/releasenames"><img src="https://img.shields.io/badge/dokuwiki-%3E%3D%20Elenor%20of%20Tsort-yellow.svg?style=flat-square" alt="Minimum DokuWiki Version"></a>
   <a href="https://www.codacy.com/app/crazy-max/dokuwiki-plugin-syntaxhighlighter4"><img src="https://img.shields.io/codacy/grade/440e4b5de2ee4d37978a8e9e19f4b76f.svg?style=flat-square" alt="Code Quality"></a>
-  <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NMMSKWE5DPNFU"><img src="https://img.shields.io/badge/donate-paypal-7057ff.svg?style=flat-square" alt="Donate Paypal"></a>
+  <br /><a href="https://www.patreon.com/crazymax"><img src="https://img.shields.io/badge/donate-patreon-fb664e.svg?style=flat-square" alt="Support me on Patreon"></a>
+  <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-7057ff.svg?style=flat-square" alt="Donate Paypal"></a>
 </p>
 
 ## About
@@ -183,13 +184,14 @@ Expected result:
   * swift
 * **Custom themes**
 
-## How can i help ?
+## How can I help ?
 
-All kinds of contributions are welcomed :raised_hands:!<br />
+All kinds of contributions are welcome :raised_hands:!<br />
 The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon:<br />
 But we're not gonna lie to each other, I'd rather you buy me a beer or two :beers:!
 
-[![Paypal](resources/paypal-donate.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NMMSKWE5DPNFU)
+[![Support me on Patreon](resources/patreon.png)](https://www.patreon.com/crazymax) 
+[![Paypal Donate](resources/paypal-donate.png)](https://www.paypal.me/crazyws)
 
 ## License
 
