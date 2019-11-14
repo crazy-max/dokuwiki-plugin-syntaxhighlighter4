@@ -4,7 +4,7 @@
   <a href="https://github.com/crazy-max/dokuwiki-plugin-syntaxhighlighter4/releases"><img src="https://img.shields.io/github/release/crazy-max/dokuwiki-plugin-syntaxhighlighter4.svg?style=flat-square" alt="Github Release"></a>
   <a href="https://www.dokuwiki.org/releasenames"><img src="https://img.shields.io/badge/dokuwiki-%3E%3D%20Elenor%20of%20Tsort-yellow.svg?style=flat-square" alt="Minimum DokuWiki Version"></a>
   <a href="https://www.codacy.com/app/crazy-max/dokuwiki-plugin-syntaxhighlighter4"><img src="https://img.shields.io/codacy/grade/440e4b5de2ee4d37978a8e9e19f4b76f.svg?style=flat-square" alt="Code Quality"></a>
-  <br /><a href="https://www.patreon.com/crazymax"><img src="https://img.shields.io/badge/donate-patreon-f96854.svg?logo=patreon&style=flat-square" alt="Support me on Patreon"></a>
+  <br /><a href="https://github.com/sponsors/crazy-max"><img src="https://img.shields.io/badge/sponsor-crazy--max-181717.svg?logo=github&style=flat-square" alt="Become a sponsor"></a>
   <a href="https://www.paypal.me/crazyws"><img src="https://img.shields.io/badge/donate-paypal-00457c.svg?logo=paypal&style=flat-square" alt="Donate Paypal"></a>
 </p>
 
@@ -186,12 +186,9 @@ Expected result:
 
 ## How can I help ?
 
-All kinds of contributions are welcome :raised_hands:!<br />
-The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon:<br />
-But we're not gonna lie to each other, I'd rather you buy me a beer or two :beers:!
+All kinds of contributions are welcome :raised_hands:! The most basic way to show your support is to star :star2: the project, or to raise issues :speech_balloon: You can also support this project by [**becoming a sponsor on GitHub**](https://github.com/sponsors/crazy-max) :clap: or by making a [Paypal donation](https://www.paypal.me/crazyws) to ensure this journey continues indefinitely! :rocket:
 
-[![Support me on Patreon](resources/patreon.png)](https://www.patreon.com/crazymax) 
-[![Paypal Donate](resources/paypal.png)](https://www.paypal.me/crazyws)
+Thanks again for your support, it is much appreciated! :pray:
 
 ## License
 
