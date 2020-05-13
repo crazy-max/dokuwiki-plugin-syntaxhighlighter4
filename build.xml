@@ -34,7 +34,7 @@
 
     <target name="release" depends="load.lib">
         <echo message="Clean release folder..." />
-        <delete dir="${bin.path}/${release.src}" />
+        <delete dir="${bin.path}/${release.base}" />
 
         <echo message="Copy ${release.src} folder..." />
         <copy todir="${bin.path}/${release.base}">
