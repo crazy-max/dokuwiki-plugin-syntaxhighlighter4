@@ -2,7 +2,7 @@
 /**
  * Default settings for the syntaxhighlighter4 plugin.
  *
- * @author CrazyMax <webmaster@crazyws.fr>
+ * @author CrazyMax <contact@crazymax.dev>
  */
 
 $conf['theme'] = 'theme-default.css';

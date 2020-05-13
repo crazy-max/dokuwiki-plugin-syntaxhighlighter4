@@ -2,19 +2,19 @@
 /**
  * Options for the syntaxhighlighter4 plugin.
  *
- * @author CrazyMax <webmaster@crazyws.fr>
+ * @author CrazyMax <contact@crazymax.dev>
  */
 
 $meta['theme'] = array('multichoice', '_choices' => array(
-    'theme-default.css',
-    'theme-django.css',
-    'theme-eclipse.css',
-    'theme-emacs.css',
-    'theme-fadetogrey.css',
-    'theme-mdultra.css',
-    'theme-midnight.css',
-    'theme-rdark.css',
-    'theme-swift.css',
+  'theme-default.css',
+  'theme-django.css',
+  'theme-eclipse.css',
+  'theme-emacs.css',
+  'theme-fadetogrey.css',
+  'theme-mdultra.css',
+  'theme-midnight.css',
+  'theme-rdark.css',
+  'theme-swift.css',
 ));
 
 // defaults

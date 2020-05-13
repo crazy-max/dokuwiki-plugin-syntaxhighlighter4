@@ -2,7 +2,7 @@
 /**
  * english language file for syntaxhighlighter4 plugin.
  *
- * @author CrazyMax <webmaster@crazyws.fr>
+ * @author CrazyMax <contact@crazymax.dev>
  */
 
 $lang['theme'] = 'CSS theme for SyntaxHiglighter 4 (Default theme-default.css)';
@@ -15,5 +15,3 @@ $lang['htmlScript'] = 'Allows you to highlight a mixture of HTML/XML code and a 
 $lang['smartTabs'] = 'Allows you to turn smart tabs feature on and off (Default true)';
 $lang['tabSize'] = 'Allows you to adjust tab size (Default 4)';
 $lang['override'] = 'List of tags to override';
-
-//Setup VIM: ex: et ts=4 :

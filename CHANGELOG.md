@@ -1,5 +1,11 @@
 # Changelog
 
+## 2020/05/13
+
+* Fix duplicated content during release
+* Update metadata
+* Code cleanup
+
 ## 2018/09/16
 
 * Fix underscores not showing on last line (Issue #23)
